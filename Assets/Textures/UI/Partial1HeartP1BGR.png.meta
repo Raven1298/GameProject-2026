@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 5792b78f52dba8642bbc752a6eb3c0f7
+guid: 9ea80c38d7e32dd46a4fc0b1c695550c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7887594054670079907
-    second: HeartPrototype1GameF26_0
+      213: 7719514063562862370
+    second: Partial1HeartP1BGR_0
+  - first:
+      213: 8870981942089095775
+    second: Partial1HeartP1BGR_1
+  - first:
+      213: 665222510790476677
+    second: Partial1HeartP1BGR_2
+  - first:
+      213: 3266968555148292078
+    second: Partial1HeartP1BGR_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,13 +111,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HeartPrototype1GameF26_0
+      name: Partial1HeartP1BGR_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 266
-        height: 240
+        x: 1383
+        y: 1420
+        width: 202
+        height: 181
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,8 +126,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a7d711a00d567d60800000000000000
-      internalID: 7887594054670079907
+      spriteID: 22feb4d1429312b60800000000000000
+      internalID: 7719514063562862370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Partial1HeartP1BGR_1
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 1467
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5a102b631f0c1b70800000000000000
+      internalID: 8870981942089095775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Partial1HeartP1BGR_2
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 1467
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583824c59585b3900800000000000000
+      internalID: 665222510790476677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Partial1HeartP1BGR_3
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 1485
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eef2cfd779a965d20800000000000000
+      internalID: 3266968555148292078
       vertices: []
       indices: 
       edges: []
@@ -137,7 +212,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HeartPrototype1GameF26_0: 7887594054670079907
+      Partial1HeartP1BGR_0: 7719514063562862370
+      Partial1HeartP1BGR_1: 8870981942089095775
+      Partial1HeartP1BGR_2: 665222510790476677
+      Partial1HeartP1BGR_3: 3266968555148292078
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
