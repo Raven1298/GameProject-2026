@@ -263,6 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5148488981527035076}
   - component: {fileID: 3396577125212437331}
+  - component: {fileID: 7686947033542586508}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -313,6 +314,18 @@ MonoBehaviour:
   P2: {fileID: 2021483871755207686, guid: c9d80bca17e350341854041d63f8f482, type: 3}
   P3: {fileID: -1391788798897968381, guid: c8182b5e06299f14d9bcbafb7841b2bd, type: 3}
   Empt: {fileID: 3791208308290148585, guid: 890f9c01f32c9b848887062a769daa63, type: 3}
+--- !u!114 &7686947033542586508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4413114985708139849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c14d8b7c66c2244a683fc898ff39e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseScreenScript
 --- !u!1 &8229584438755565666
 GameObject:
   m_ObjectHideFlags: 0
