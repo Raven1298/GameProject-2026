@@ -6,11 +6,11 @@ public class PauseScreenScript : MonoBehaviour
 {
 
     bool paused = false;
+    public GameObject ChildObject;
 
     void Start()
     {
-        
-
+        ChildObject.SetActive(false);
     }
 
 
@@ -27,14 +27,17 @@ public class PauseScreenScript : MonoBehaviour
     bool TogglePause()
     {
         
-        if(Time.timeScale == 0f)
+        if(Time.timeScale == 0f) //Unpauses the Game
 		{
 			Time.timeScale = 1f;
+            ChildObject.SetActive(false);
 			return(false);
+            
 		}
-		else
+		else  //Pauses the Game
 		{
 			Time.timeScale = 0f;
+            ChildObject.SetActive(true);
 			return(true);	
 		}
     }
