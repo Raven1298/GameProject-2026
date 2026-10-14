@@ -26,6 +26,7 @@ public class meleeAttack : MonoBehaviour
             attackTimeCounter = 0f;
             
             Attack();
+            Debug.Log("Thats an attack");
         }
 
         attackTimeCounter += Time.deltaTime;
