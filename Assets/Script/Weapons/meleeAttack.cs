@@ -22,7 +22,7 @@ public class meleeAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Keyboard.current.spaceKey.wasPressedThisFrame && attackTimeCounter >= timeBtwAttacks){
+        if(Keyboard.current.jKey.wasPressedThisFrame && attackTimeCounter >= timeBtwAttacks){
             attackTimeCounter = 0f;
             
             Attack();
