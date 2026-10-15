@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &404433289 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8105994073169824566, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
+  m_PrefabInstance: {fileID: 839206424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,10 +428,10 @@ PrefabInstance:
     - target: {fileID: 9020637172914550091, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
       propertyPath: GroundCheck
       value: 
-      objectReference: {fileID: 1289741818}
+      objectReference: {fileID: 404433289}
     - target: {fileID: 9020637172914550091, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
       propertyPath: groundCheckRadius
-      value: 3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9020637172914550091, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
       propertyPath: groundLayer.m_Bits
@@ -503,11 +508,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baa32dd239ccf664f9947efff5cf2729, type: 3}
---- !u!4 &1289741818 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2839517074156134630, guid: baa32dd239ccf664f9947efff5cf2729, type: 3}
-  m_PrefabInstance: {fileID: 1050346007}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1309723341
 GameObject:
   m_ObjectHideFlags: 0
