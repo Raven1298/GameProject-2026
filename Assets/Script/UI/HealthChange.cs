@@ -17,12 +17,12 @@ int maxHealth = 12;
 [SerializeField] private Sprite Empt;
 
 
+public PlayerHealth playerHealthScript;
 
 
 void Start()
 {
-    
-    
+health = playerHealthScript.health;   
 }
 
 
@@ -109,9 +109,10 @@ void Update()
 }
 
 
-    void ChangeSprite(float health)
+    void GetHealth()
     {
-        
+        //int T = PlayerHealth.
+
 
 
     }
