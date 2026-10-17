@@ -6,7 +6,7 @@ public class HealthChange : MonoBehaviour
 {
 
 [SerializeField] private int health = 12;
-int maxHealth = 12;
+//int maxHealth = 12;
 [SerializeField] private Image H1;
 [SerializeField] private Image H2;
 [SerializeField] private Image H3;
@@ -17,11 +17,13 @@ int maxHealth = 12;
 [SerializeField] private Sprite Empt;
 
 
-public PlayerHealth playerHealthScript;
+private PlayerHealth playerHealthScript;
 
 
 void Start()
 {
+GameObject Player = GameObject.FindWithTag("Player");
+playerHealthScript = Player.GetComponent<PlayerHealth>();
 health = playerHealthScript.health;   
 }
 
@@ -29,7 +31,8 @@ health = playerHealthScript.health;
 void Update()
 {
 
-    
+    health = playerHealthScript.health;   
+
     if(health==12)
     {
     H1.sprite = Full;
