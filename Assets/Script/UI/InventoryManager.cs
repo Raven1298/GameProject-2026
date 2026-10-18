@@ -17,12 +17,12 @@ public class InventoryManager : MonoBehaviour
     void Update()
     {
         
-        if(Keyboard.current.escapeKey.wasPressedThisFrame && menuActivated)
+        if(Keyboard.current.tabKey.wasPressedThisFrame && menuActivated)
         {
             Inventory.SetActive(false);
             menuActivated = false;
         }
-        else if(Keyboard.current.escapeKey.wasPressedThisFrame && !menuActivated)
+        else if(Keyboard.current.tabKey.wasPressedThisFrame && !menuActivated)
         {
             Inventory.SetActive(true);
             menuActivated = true;
