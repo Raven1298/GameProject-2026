@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 4159753266091353834}
   m_Layer: 5
   m_Name: DeatMessageCanvas
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

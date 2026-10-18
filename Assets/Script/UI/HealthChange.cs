@@ -18,13 +18,14 @@ public class HealthChange : MonoBehaviour
 
 
 private PlayerHealth playerHealthScript;
-
+private GameObject DeathScreen; 
 
 void Start()
 {
 GameObject Player = GameObject.FindWithTag("Player");
 playerHealthScript = Player.GetComponent<PlayerHealth>();
 health = playerHealthScript.health;   
+//DeathScreen = GameObject.FindWithTag("Death");
 }
 
 
@@ -104,7 +105,8 @@ void Update()
     {
     H1.sprite = Empt;
     H2.sprite = Empt;
-    H3.sprite = Empt;    
+    H3.sprite = Empt;
+    DeathScreen.SetActive(true);    
     }
 
 
