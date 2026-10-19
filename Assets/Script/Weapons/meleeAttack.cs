@@ -10,7 +10,7 @@ public class meleeAttack : MonoBehaviour
     public float attackRange = 1f;
     private LayerMask attackableLayer;
     public float damageAmount = 1f;
-    public float timeBtwAttacks = 0.15f;
+    public float timeBtwAttacks = 0.35f;
     private float attackTimeCounter;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,6 +27,7 @@ public class meleeAttack : MonoBehaviour
             
             Attack();
             Debug.Log("Thats an attack");
+            SoundManager.PlaySound(SoundType.Attack, .5f);
         }
 
         attackTimeCounter += Time.deltaTime;
