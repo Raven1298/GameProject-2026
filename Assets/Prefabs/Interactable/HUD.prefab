@@ -364,6 +364,7 @@ MonoBehaviour:
   P2: {fileID: 2021483871755207686, guid: c9d80bca17e350341854041d63f8f482, type: 3}
   P3: {fileID: -1391788798897968381, guid: c8182b5e06299f14d9bcbafb7841b2bd, type: 3}
   Empt: {fileID: 3791208308290148585, guid: 890f9c01f32c9b848887062a769daa63, type: 3}
+  playerHealthScript: {fileID: -4412603429184742380, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
 --- !u!1 &4451471813390226039
 GameObject:
   m_ObjectHideFlags: 0

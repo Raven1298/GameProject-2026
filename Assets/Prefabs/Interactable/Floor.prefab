@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2839517074156134630}
   - component: {fileID: 8420995540625560524}
   - component: {fileID: 8516335111704886041}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.67, y: -4.79, z: 0}
-  m_LocalScale: {x: 242.7655, y: 3.31, z: 1}
+  m_LocalScale: {x: 1000, y: 3.31, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
