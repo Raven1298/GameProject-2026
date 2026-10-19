@@ -152,10 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7dcec02466708248ba0c26230450407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  <FacingDirections>k__BackingField: 1
-  <rb>k__BackingField: {fileID: 0}
   config: {fileID: 11400000, guid: 4c324e5268007014f9ed5ff42bf4b07c, type: 2}
-  <senses>k__BackingField: {fileID: 0}
 --- !u!70 &159375432
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1028,7 +1025,7 @@ Animator:
   m_GameObject: {fileID: 1275837986}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8e7b63cb2fa9d4c4a8b2b3e8b2bcf607, type: 2}
+  m_Controller: {fileID: 9100000, guid: 797beca0ce0af4a4b86961bf3ea24a91, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
