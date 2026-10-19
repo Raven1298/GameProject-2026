@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -15,9 +16,20 @@ public Rigidbody2D rb;
     public float groundCheckRadius;
     public LayerMask groundLayer;
 
+    private bool canDash = true;
+    private bool isDashing;
+    public float dashSpeed = 10f;
+    public float dashTime = 0.1f;
+    private float dashCooldown = 2.5f;
+
 
     // Update is called once per frame
     void Update(){
+
+        if(isDashing){
+            return;
+        }
+
 
         if (Keyboard.current == null){
             return;
@@ -42,8 +54,13 @@ public Rigidbody2D rb;
             xMovement = xMovement.normalized * Time.deltaTime * currentSpeed;
 
             transform.position += new Vector3 (xMovement.x, 0, 0);
-            
+            SoundManager.PlaySound(SoundType.movement, .2f);
         }
+        //dashing
+        if(Keyboard.current.kKey.wasPressedThisFrame && canDash){
+            StartCoroutine(Dash());
+        }
+    
 
         //Jumping
         if (Keyboard.current.spaceKey.wasPressedThisFrame){
@@ -56,5 +73,19 @@ public Rigidbody2D rb;
         {
             return Physics2D.OverlapCircle(GroundCheck.position, groundCheckRadius, groundLayer);
         }
+    }
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.linearVelocity = new Vector2(transform.localScale.x * dashSpeed, 0f);
+        yield return new WaitForSeconds(dashTime);
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 }
