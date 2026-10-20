@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 5112397480204516563}
   - component: {fileID: 5170294012593425021}
   - component: {fileID: -4412603429184742380}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Character
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -152,6 +152,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
+  dashSpeed: 5
+  dashTime: 0.1
 --- !u!61 &4845205852513119503
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -280,7 +282,7 @@ Transform:
   m_GameObject: {fileID: 7031075626229307123}
   serializedVersion: 2
   m_LocalRotation: {x: -0.01527105, y: -0, z: -0, w: 0.9998834}
-  m_LocalPosition: {x: -0.11, y: -0.48, z: -0.01}
+  m_LocalPosition: {x: -0.102, y: -0.52, z: -0.009}
   m_LocalScale: {x: 0.8419446, y: 0.86872494, z: 1.053}
   m_ConstrainProportionsScale: 0
   m_Children: []
