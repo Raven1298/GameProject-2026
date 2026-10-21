@@ -9,7 +9,7 @@ public class StartMenuScript : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Playtest1");
     }
 
 
