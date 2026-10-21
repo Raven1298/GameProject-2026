@@ -34,7 +34,7 @@ void Update()
 
     health = playerHealthScript.health;   
 
-    if(health==12)
+    if(health>=12)
     {
     H1.sprite = Full;
     H2.sprite = Full;
@@ -101,12 +101,13 @@ void Update()
     H1.sprite = P3;
     H2.sprite = Empt;
     H3.sprite = Empt;    
-    }else if(health==0)
+    }
+    else if(health<=0)
     {
     H1.sprite = Empt;
     H2.sprite = Empt;
     H3.sprite = Empt;
-    DeathScreen.SetActive(true);    
+    //DeathScreen.SetActive(true);    
     }
 
 
