@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,7 @@ public class meleeAttack : MonoBehaviour
     public float timeBtwAttacks = 0.35f;
     private float attackTimeCounter;
 
+    public bool shouldBeDamaging { get; private set; } = false;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,7 +30,7 @@ public class meleeAttack : MonoBehaviour
         if(Keyboard.current.jKey.wasPressedThisFrame && attackTimeCounter >= timeBtwAttacks){
             attackTimeCounter = 0f;
             
-            Attack();
+            //Attack();
             HitboxFlasher flasher = GetComponent<HitboxFlasher>();
             if (flasher != null)
             {
@@ -41,6 +43,7 @@ public class meleeAttack : MonoBehaviour
         attackTimeCounter += Time.deltaTime;
     }
 
+    /*
     void Attack()
     {
         hits = Physics2D.CircleCastAll(attackTransform.position, attackRange, transform.right, 0f, attackableLayer);
@@ -53,6 +56,29 @@ public class meleeAttack : MonoBehaviour
             }
         }
     }
+    */
+
+    public IEnumerator DamageWhileSlashIsActive()
+    {
+        
+        shouldBeDamaging = true;
+        
+        while (shouldBeDamaging)
+        {
+            hits = Physics2D.CircleCastAll(attackTransform.position, attackRange, transform.right, 0f, attackableLayer);
+
+            for(int i = 0; i < hits.Length; i++){
+                IDamage iDamage = hits[i].collider.gameObject.GetComponent<IDamage>();
+
+                if(iDamage != null && !iDamage.HasTakenDamage){
+                    iDamage.Damage(damageAmount);
+                }
+            }
+            yield return null; // Wait for the next frame before checking again
+        }
+    }
+
+   
 
     void OnDrawGizmosSelected(){
         Gizmos.DrawWireSphere(attackTransform.position, attackRange);
@@ -70,4 +96,13 @@ public class meleeAttack : MonoBehaviour
     }
     }
 
+    void ShouldBeDamagingToTrue()
+    {
+        shouldBeDamaging = true;
+    }
+
+    void ShouldBeDamagingToFalse()
+    {
+        shouldBeDamaging = false;
+    }
 }

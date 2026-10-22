@@ -92,7 +92,7 @@ public Rigidbody2D rb;
         yield return new WaitForSeconds(dashTime * Time.deltaTime);
         rb.gravityScale = originalGravity;
         isDashing = false;
-        yield return new WaitForSeconds(dashCooldown * Time.deltaTime);
+        yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
 
