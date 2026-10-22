@@ -12,10 +12,13 @@ public class meleeAttack : MonoBehaviour
     public float damageAmount = 1f;
     public float timeBtwAttacks = 0.35f;
     private float attackTimeCounter;
+
+    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         attackTimeCounter = timeBtwAttacks;
     }
 
@@ -26,6 +29,11 @@ public class meleeAttack : MonoBehaviour
             attackTimeCounter = 0f;
             
             Attack();
+            HitboxFlasher flasher = GetComponent<HitboxFlasher>();
+            if (flasher != null)
+            {
+                flasher.Flash(Color.red, 0.15f);
+            }
             Debug.Log("Thats an attack");
             SoundManager.PlaySound(SoundType.Attack, .5f);
         }
@@ -49,4 +57,17 @@ public class meleeAttack : MonoBehaviour
     void OnDrawGizmosSelected(){
         Gizmos.DrawWireSphere(attackTransform.position, attackRange);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+    if (other.CompareTag("Hitbox"))
+    {
+        HitboxFlasher flasher = GetComponent<HitboxFlasher>();
+        if (flasher != null)
+        {
+            flasher.Flash(Color.white, 0.15f);
+        }
+    }
+    }
+
 }
