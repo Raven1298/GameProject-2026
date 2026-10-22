@@ -34,6 +34,8 @@ public Rigidbody2D rb;
         if (Keyboard.current == null){
             return;
         }
+        
+        
         //Movement
         Vector3 xMovement = Vector3.zero;
         currentSpeed = speed;
@@ -54,11 +56,16 @@ public Rigidbody2D rb;
             xMovement = xMovement.normalized * Time.deltaTime * currentSpeed;
 
             transform.position += new Vector3 (xMovement.x, 0, 0);
-            SoundManager.PlaySound(SoundType.movement, .2f);
+            //SoundManager.PlaySound(SoundType.movement, .2f);
         }
+        
         //dashing
-        if(Keyboard.current.kKey.wasPressedThisFrame && canDash){
+        if(Keyboard.current.kKey.wasPressedThisFrame && canDash && (Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed)){
             StartCoroutine(Dash());
+        }
+
+        if(Keyboard.current.kKey.wasPressedThisFrame && canDash && (Keyboard.current.leftArrowKey.isPressed || Keyboard.current.aKey.isPressed)){
+            StartCoroutine(LDash());
         }
     
 
@@ -82,10 +89,24 @@ public Rigidbody2D rb;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.linearVelocity = new Vector2(transform.localScale.x * dashSpeed, 0f);
-        yield return new WaitForSeconds(dashTime);
+        yield return new WaitForSeconds(dashTime * Time.deltaTime);
         rb.gravityScale = originalGravity;
         isDashing = false;
-        yield return new WaitForSeconds(dashCooldown);
+        yield return new WaitForSeconds(dashCooldown * Time.deltaTime);
+        canDash = true;
+    }
+
+    private IEnumerator LDash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.linearVelocity = new Vector2(-transform.localScale.x * dashSpeed, 0f);
+        yield return new WaitForSeconds(dashTime * Time.deltaTime);
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashCooldown * Time.deltaTime);
         canDash = true;
     }
 }
