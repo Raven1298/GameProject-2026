@@ -13,24 +13,12 @@ public class EnemySenses : MonoBehaviour
 
 
     public bool IsAtCliff(){
+        
         return !Physics2D.Raycast(groundCheck.position, Vector2.down, config.groundCheckDistance, config.groundLayer);
     }
 
     public bool IsAtWall(){
-        return Physics2D.Raycast(wallCheck.position, Vector2.right, config.wallCheckDistance, config.wallLayer);
+        Vector2 direction = Vector2.right * enemy.FacingDirections;
+        return Physics2D.Raycast(wallCheck.position, direction, config.wallCheckDistance, config.wallLayer);
     }
-
-    private void OnDrawGizmosSelected(){
-
-        //Ground Check
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(groundCheck.position, groundCheck.position + Vector3.down * config.groundCheckDistance);
-
-        //Wall check
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(wallCheck.position, wallCheck.position + Vector3.right * enemy.FacingDirections * config.wallCheckDistance);
-    }
-
-
-
 }
