@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 public class EnemyHealth : MonoBehaviour, IDamage
 {
     public float maxHealth = 3f;
-    [SerializeField] private meleeAttack attack;
+    
     
     private float currentHealth;
 
@@ -18,11 +18,6 @@ public class EnemyHealth : MonoBehaviour, IDamage
     void Update()
     {
         
-
-        if (attack && attack.shouldBeDamaging)
-        {
-            Damage(attack.damageAmount);
-        }
     }
 
     public void Damage(float damageAmount){

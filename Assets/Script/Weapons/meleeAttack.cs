@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,8 @@ public class meleeAttack : MonoBehaviour
     private float attackTimeCounter;
 
     public bool shouldBeDamaging { get; private set; } = false;
+
+    private List<IDamage> iDamages = new List<IDamage>();
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -70,12 +73,24 @@ public class meleeAttack : MonoBehaviour
             for(int i = 0; i < hits.Length; i++){
                 IDamage iDamage = hits[i].collider.gameObject.GetComponent<IDamage>();
 
-                if(iDamage != null && !iDamage.HasTakenDamage){
+                if(iDamage != null && !iDamages.Contains(iDamage)){
                     iDamage.Damage(damageAmount);
+                    iDamages.Add(iDamage);
                 }
             }
             yield return null; // Wait for the next frame before checking again
         }
+
+        ReturnAttackablesToDamages();
+    }
+
+    private void ReturnAttackablesToDamages()
+    {
+        foreach(IDamage thingThatWasDamaged in iDamages)
+        {
+            thingThatWasDamaged.HasTakenDamage = false;
+        }
+        iDamages.Clear();
     }
 
    
