@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 159375432}
   - component: {fileID: 159375431}
   - component: {fileID: 159375436}
+  - component: {fileID: 159375437}
   m_Layer: 8
   m_Name: enemySquare
   m_TagString: Untagged
@@ -310,6 +311,19 @@ MonoBehaviour:
   config: {fileID: 11400000, guid: 4c324e5268007014f9ed5ff42bf4b07c, type: 2}
   groundCheck: {fileID: 573800632}
   wallCheck: {fileID: 1575951213}
+--- !u!114 &159375437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159375430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ebfac38d30a824bae66095e893e824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHealth: 3
 --- !u!1 &201840222
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,12 +334,12 @@ GameObject:
   m_Component:
   - component: {fileID: 201840223}
   m_Layer: 0
-  m_Name: GroundCheck (1)
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &201840223
 Transform:
   m_ObjectHideFlags: 0
@@ -334,12 +348,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201840222}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.46, y: -0.38, z: 0}
-  m_LocalScale: {x: 0.3625, y: 0.8201345, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 565336847}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &318445915
 GameObject:
@@ -721,7 +735,6 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 201840223}
   - {fileID: 975934883}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -812,7 +825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySenses
   enemy: {fileID: 565336851}
   config: {fileID: 11400000, guid: 23cdc2dcbab034e48944542debb3464a, type: 2}
-  groundCheck: {fileID: 201840223}
+  groundCheck: {fileID: 0}
   wallCheck: {fileID: 975934883}
 --- !u!114 &565336851
 MonoBehaviour:
@@ -1109,6 +1122,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1576483650031513319, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 2514148577627445054, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.17
@@ -1152,6 +1169,34 @@ PrefabInstance:
     - target: {fileID: 3983424228044205802, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170294012593425021, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245903590525738489, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.27999383
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245903590525738489, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.41919997
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245903590525738489, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245903590525738489, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020637172914550091, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
+      propertyPath: dashTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020637172914550091, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
+      propertyPath: dashSpeed
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2526,6 +2571,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 201840223}
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 839206424}
