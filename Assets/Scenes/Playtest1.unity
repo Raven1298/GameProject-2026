@@ -1578,7 +1578,7 @@ MonoBehaviour:
   itemName: Sqaure
   quantity: 1
   sprite: {fileID: 3791208308290148585, guid: 890f9c01f32c9b848887062a769daa63, type: 3}
-  itemDescription: 
+  itemDescription: A square of epic proportions, Behold it's might and beauty.
 --- !u!1001 &725944027
 PrefabInstance:
   m_ObjectHideFlags: 0
