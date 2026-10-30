@@ -12,6 +12,7 @@ public int quantity;
 public Sprite itemSprite;
 public bool isFull;
 public string itemDescription;
+[SerializeField] private int MaxNumberOfItems;
  
 
  //=================Item Slot======================//
@@ -36,19 +37,45 @@ private void Start()
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
     }
 
-public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
-        this.itemName = itemName;
-        this.quantity = quantity;
-        this.itemSprite = itemSprite;
-        this.itemDescription = itemDescription;
-        isFull = true;
+        //Check to see if the slot is already full
+        if(isFull)
+            return quantity;
 
+        //Update Name    
+        this.itemName = itemName;
+
+        //Update Image
+        this.itemSprite = itemSprite;
         itemImage.gameObject.SetActive(true);
-        quantityText.text = quantity.ToString();
-        quantityText.enabled = true;
         itemImage.sprite = itemSprite;
 
+        //Update Description
+        this.itemDescription = itemDescription;
+
+        //Update Quantity
+        this.quantity += quantity;
+        if (this.quantity >= MaxNumberOfItems)
+        {
+            quantityText.text = MaxNumberOfItems.ToString();
+            quantityText.enabled = true;
+            isFull = true;
+            //if (isFull == true)
+            //{
+               // quantityText.text = MaxNumberOfItems.ToString();
+            //}
+
+            //Return the leftovers
+            int extraItems = this.quantity - MaxNumberOfItems;
+            this.quantity = MaxNumberOfItems;
+            return extraItems;
+        }
+
+        //Update the Quantity Text
+        quantityText.text = this.quantity.ToString();
+        quantityText.enabled = true;
+        return 0;
 
     }
 
