@@ -89,7 +89,7 @@ public Rigidbody2D rb;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.linearVelocity = new Vector2(transform.localScale.x * dashSpeed, 0f);
-        yield return new WaitForSeconds(dashTime * Time.deltaTime);
+        yield return new WaitForSeconds(dashTime);
         rb.gravityScale = originalGravity;
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
@@ -103,10 +103,10 @@ public Rigidbody2D rb;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.linearVelocity = new Vector2(-transform.localScale.x * dashSpeed, 0f);
-        yield return new WaitForSeconds(dashTime * Time.deltaTime);
+        yield return new WaitForSeconds(dashTime);
         rb.gravityScale = originalGravity;
         isDashing = false;
-        yield return new WaitForSeconds(dashCooldown * Time.deltaTime);
+        yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
 }

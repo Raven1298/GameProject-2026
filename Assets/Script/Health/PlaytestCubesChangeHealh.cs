@@ -47,10 +47,12 @@ public class ChangeHealh : MonoBehaviour
     // Check if the current color is close to the expected Green color
     else if (Mathf.Abs(currentColor.g - (199f / 255f)) < tolerance)
     {
-        if (repeatCoroutine == null)    
-        {
-            repeatCoroutine = StartCoroutine(Heal());
-        }        
+        if(playerHealthScript.health < playerHealthScript.maxHealth){ 
+            if (repeatCoroutine == null)    
+            {
+                repeatCoroutine = StartCoroutine(Heal());
+            }        
+        }
     }
 }
 
