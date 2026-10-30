@@ -37,9 +37,11 @@ public class ChangeHealh : MonoBehaviour
     // Check if the current color is close to the expected Red color
     if (Mathf.Abs(currentColor.r - (234f / 255f)) < tolerance)
     {
-        if (repeatCoroutine == null)    
-        {
-            repeatCoroutine = StartCoroutine(Hurt());
+        if(playerHealthScript.health > 0){
+            if (repeatCoroutine == null)    
+            {
+                repeatCoroutine = StartCoroutine(Hurt());
+            }
         }
     }
     // Check if the current color is close to the expected Green color
