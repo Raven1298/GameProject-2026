@@ -1192,11 +1192,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9020637172914550091, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
       propertyPath: dashTime
-      value: 0.3
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 9020637172914550091, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
       propertyPath: dashSpeed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
