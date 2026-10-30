@@ -307,8 +307,13 @@ MonoBehaviour:
   quantity: 0
   itemSprite: {fileID: 0}
   isFull: 0
+  itemDescription: 
+  MaxNumberOfItems: 9
   quantityText: {fileID: 4881246868873302447}
   itemImage: {fileID: 1033041385808372831}
+  ItemDescriptionImage: {fileID: 0}
+  ItemDescriptionNameText: {fileID: 0}
+  ItemDescriptionText: {fileID: 0}
   selectedShader: {fileID: 6809397056006745169}
   ThisItemIsSelected: 0
 --- !u!1 &6809397056006745169
