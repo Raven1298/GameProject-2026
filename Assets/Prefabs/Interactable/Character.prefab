@@ -152,7 +152,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  dashSpeed: 10
+  dashSpeed: 7.5
   dashTime: 0.1
 --- !u!61 &4845205852513119503
 BoxCollider2D:
@@ -242,7 +242,7 @@ MonoBehaviour:
   attackTransform: {fileID: 5245903590525738489}
   attackRange: 0.9
   damageAmount: 1
-  timeBtwAttacks: 0.15
+  timeBtwAttacks: 0.5
 --- !u!114 &-4412603429184742380
 MonoBehaviour:
   m_ObjectHideFlags: 0
