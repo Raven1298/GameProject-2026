@@ -6,7 +6,7 @@ using System.Collections;
 public class ChangeHealh : MonoBehaviour
 {
 
-
+    GameObject Player;  
     private SpriteRenderer spriteRenderer;
     private Color currentColor;
     private Coroutine repeatCoroutine;
@@ -19,7 +19,7 @@ public class ChangeHealh : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         currentColor = spriteRenderer.color;
 
-        GameObject Player = GameObject.FindWithTag("Player");
+        Player = GameObject.FindWithTag("Player");
         playerHealthScript = Player.GetComponent<PlayerHealth>();
     }
 
@@ -31,24 +31,35 @@ public class ChangeHealh : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
 {
+    if(other.gameObject.tag == "Player")
+    {
+            
+
+        
     // Define a small tolerance window for precision errors
     float tolerance = 0.01f;
 
     // Check if the current color is close to the expected Red color
     if (Mathf.Abs(currentColor.r - (234f / 255f)) < tolerance)
     {
-        if (repeatCoroutine == null)    
-        {
-            repeatCoroutine = StartCoroutine(Hurt());
+        if(playerHealthScript.health > 0){
+            if (repeatCoroutine == null)    
+            {
+                repeatCoroutine = StartCoroutine(Hurt());
+            }
         }
     }
     // Check if the current color is close to the expected Green color
     else if (Mathf.Abs(currentColor.g - (199f / 255f)) < tolerance)
     {
-        if (repeatCoroutine == null)    
-        {
-            repeatCoroutine = StartCoroutine(Heal());
-        }        
+        if(playerHealthScript.health < playerHealthScript.maxHealth){ 
+            if (repeatCoroutine == null)    
+            {
+                repeatCoroutine = StartCoroutine(Heal());
+            }        
+        }
+    }
+
     }
 }
 

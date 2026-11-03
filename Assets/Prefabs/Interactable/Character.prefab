@@ -152,7 +152,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  dashSpeed: 5
+  dashSpeed: 10
   dashTime: 0.1
 --- !u!61 &4845205852513119503
 BoxCollider2D:
