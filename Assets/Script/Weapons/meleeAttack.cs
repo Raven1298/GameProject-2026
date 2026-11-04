@@ -12,7 +12,7 @@ public class meleeAttack : MonoBehaviour
     public float attackRange = 1f;
     private LayerMask attackableLayer;
     public float damageAmount = 1f;
-    public float timeBtwAttacks = 0.35f;
+    public float timeBtwAttacks = 0.5f;
     private float attackTimeCounter;
 
     public bool shouldBeDamaging { get; private set; } = false;
@@ -34,6 +34,7 @@ public class meleeAttack : MonoBehaviour
             attackTimeCounter = 0f;
             
             //Attack();
+            StartCoroutine(DamageWhileSlashIsActive());
             HitboxFlasher flasher = GetComponent<HitboxFlasher>();
             if (flasher != null)
             {
@@ -101,14 +102,14 @@ public class meleeAttack : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-    if (other.CompareTag("Hitbox"))
-    {
-        HitboxFlasher flasher = GetComponent<HitboxFlasher>();
-        if (flasher != null)
+        if (other.CompareTag("Hitbox"))
         {
-            flasher.Flash(Color.white, 0.15f);
+            HitboxFlasher flasher = GetComponent<HitboxFlasher>();
+            if (flasher != null)
+            {
+                flasher.Flash(Color.white, 0.15f);
+            }
         }
-    }
     }
 
     void ShouldBeDamagingToTrue()
