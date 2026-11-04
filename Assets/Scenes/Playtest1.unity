@@ -647,6 +647,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &536349652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9038615828025417301, guid: fdc98c4385552964f8d73c3cbe9514b6, type: 3}
+  m_PrefabInstance: {fileID: 2115904527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff176b2ad3fab44e9c5a326eb4f1bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneController
 --- !u!1 &547885980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,6 +2006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   SceneName: SampleScene
+  sceneController: {fileID: 536349652}
 --- !u!61 &774768964
 BoxCollider2D:
   m_ObjectHideFlags: 0
