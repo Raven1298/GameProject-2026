@@ -102,7 +102,7 @@ public class meleeAttack : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Hitbox"))
         {
             HitboxFlasher flasher = GetComponent<HitboxFlasher>();
             if (flasher != null)
