@@ -5,11 +5,11 @@ public class StartMenuScript : MonoBehaviour
 {
 
 
-
+    [SerializeField] private SceneController sceneController;
 
     public void Play()
     {
-        SceneManager.LoadScene("Playtest1");
+        sceneController.LoadScene("Playtest1");
     }
 
 
