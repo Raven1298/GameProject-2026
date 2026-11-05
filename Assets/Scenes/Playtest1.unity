@@ -1906,7 +1906,7 @@ Transform:
   m_GameObject: {fileID: 774768962}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.5, y: 0.6, z: 0}
+  m_LocalPosition: {x: 77.3, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 12.597243, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2013,10 +2013,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f787c81e81bf245bd518d1a3415a8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Full
+  itemName: Empty
   quantity: 4
-  sprite: {fileID: 70528718083413920, guid: 0b67724371218ab4eb08ac38b1adf603, type: 3}
-  itemDescription: A full heart yet unburdened by glorious purpose
+  sprite: {fileID: 3791208308290148585, guid: 890f9c01f32c9b848887062a769daa63, type: 3}
+  itemDescription: An empty heart, through trials and tribulations it has lost it's glow.
 --- !u!50 &807379164
 Rigidbody2D:
   serializedVersion: 5
