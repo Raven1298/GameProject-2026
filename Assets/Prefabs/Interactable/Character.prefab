@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 5170294012593425021}
   - component: {fileID: -4412603429184742380}
   - component: {fileID: 6968039441267413228}
+  - component: {fileID: 890114345834976748}
   m_Layer: 9
   m_Name: Character
   m_TagString: Player
@@ -276,6 +277,19 @@ MonoBehaviour:
   launchPoint2: {fileID: 7222905346135544318}
   projectilePrefab: {fileID: 6552969204572322514, guid: 44ad0454508bb88428c929af8ba453df, type: 3}
   shootCooldown: 0.5
+--- !u!114 &890114345834976748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3983424228044205802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce1e34c32189164c99c0047fdcbd2ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DontDestroy
+  objectIndex: 0
 --- !u!1 &6948382324473184968
 GameObject:
   m_ObjectHideFlags: 0
