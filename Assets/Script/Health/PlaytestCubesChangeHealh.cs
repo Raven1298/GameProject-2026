@@ -74,7 +74,7 @@ public class ChangeHealh : MonoBehaviour
 
     private IEnumerator Heal()
         {
-            while (true)
+            while (true && playerHealthScript.health <= playerHealthScript.maxHealth)
             {
                 playerHealthScript.health++;
                 yield return new WaitForSeconds(2f);
@@ -83,7 +83,7 @@ public class ChangeHealh : MonoBehaviour
 
 private IEnumerator Hurt()
     {
-        while (true)
+        while (true && playerHealthScript.health >= 0)
         {
             playerHealthScript.health--;
             yield return new WaitForSeconds(2f);
