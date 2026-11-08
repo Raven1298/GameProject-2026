@@ -1,3 +1,4 @@
+using UnityEditor.SettingsManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,11 @@ public class StartMenuScript : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Settings()
+    {
+        sceneController.LoadScene("Settings");
     }
 
 
