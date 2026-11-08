@@ -7,6 +7,7 @@ public class FellOffMapDetector : MonoBehaviour
     
     void Start()
     {
+        Player = GameObject.FindWithTag("Player");
         
     }
 
