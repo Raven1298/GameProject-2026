@@ -11,12 +11,14 @@ public class SettingsScript : MonoBehaviour
     void Start()
     {
         HUD = FindAnyObjectByType<HealthChange>();
+        if(HUD != null)
         HUD.ToggleHUDImages();
     }
 
 
     public void MainMenu()
     {
+        if(HUD != null)
         HUD.ToggleHUDImages();
         sceneController.LoadScene("StartMenu");
     }
