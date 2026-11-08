@@ -1,7 +1,9 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using Unity.Cinemachine;
 using UnityEngine.SceneManagement;
+
+
 
 public class SceneController : MonoBehaviour
 {
@@ -9,31 +11,47 @@ public class SceneController : MonoBehaviour
     [SerializeField] private float sceneFadeDur;
     private SceneFade sceneFade;
     private GameObject Player;
+    private CinemachineCamera vcam;
 
-    private void Awake()
-    {
-        Player = GameObject.FindWithTag("Player");
-        sceneFade = GetComponentInChildren<SceneFade>();
-    }
+    
+
 
     private IEnumerator Start()
     {
+        Player = GameObject.FindWithTag("Player");
+        vcam = FindAnyObjectByType<CinemachineCamera>(); 
+        sceneFade = GetComponentInChildren<SceneFade>();
         yield return sceneFade.FadeInCoroutine(sceneFadeDur);
     }
 
     public void LoadScene(string sceneName)
     {
         StartCoroutine(LoadSceneCourotine(sceneName));
-        Vector2 respawn = new Vector2(2, -4);
-        Player.transform.position = respawn;
     }
 
 
     private IEnumerator LoadSceneCourotine(string sceneName)
     {
         yield return sceneFade.FadeOutCoroutine(sceneFadeDur);
+        TeleportPlayer(2, -4);
         yield return SceneManager.LoadSceneAsync(sceneName);
 
+
+    }
+
+    public void TeleportPlayer(int x, int y)
+    {
+    Vector2 respawn = new Vector2(x, y);
+    Vector3 Cameraoffset = new Vector3(0,0,0);
+    if(Player != null)
+        {
+        Cameraoffset = (Vector3)respawn - Player.transform.position;
+        Player.transform.position = respawn;
+        }   
+        if (vcam != null)
+        {
+            vcam.OnTargetObjectWarped(Player.transform, Cameraoffset);
+        }
     }
 
 

@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff176b2ad3fab44e9c5a326eb4f1bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneController
-  sceneFadeDur: 1
+  sceneFadeDur: 0.2
 --- !u!1 &2806677393850886393
 GameObject:
   m_ObjectHideFlags: 0

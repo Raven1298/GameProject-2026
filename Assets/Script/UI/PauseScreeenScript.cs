@@ -7,6 +7,8 @@ public class PauseScreenScript : MonoBehaviour
 
     bool paused = false;
     public GameObject ChildObject;
+    [SerializeField] private SceneController sceneController;
+
 
     void Start()
     {
@@ -42,7 +44,16 @@ public class PauseScreenScript : MonoBehaviour
 		}
     }
 
-
+    public void MainMenu()
+    {
+        TogglePause();
+        sceneController.LoadScene("StartMenu");
+    }
+    public void Settings()
+    {
+        TogglePause();
+        sceneController.LoadScene("Settings");
+    }
 
 
 
