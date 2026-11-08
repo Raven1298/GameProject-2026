@@ -20,8 +20,11 @@ public class HealthChange : MonoBehaviour
 private PlayerHealth playerHealthScript;
 private GameObject DeathScreen; 
 
+private bool on;
+
 void Start()
 {
+on = true;
 GameObject Player = GameObject.FindWithTag("Player");
 playerHealthScript = Player.GetComponent<PlayerHealth>();
 health = playerHealthScript.health;   
@@ -115,11 +118,23 @@ void Update()
 }
 
 
-    void GetHealth()
+    public void ToggleHUDImages()
     {
-        //int T = PlayerHealth.
+        if(on == true)
+        {
+        H1.gameObject.SetActive(false); 
+        H2.gameObject.SetActive(false); 
+        H3.gameObject.SetActive(false); 
+        on = false;
+        }
+        else if(on == false)
+        {
+        H1.gameObject.SetActive(true); 
+        H2.gameObject.SetActive(true); 
+        H3.gameObject.SetActive(true); 
+        on = true;
 
-
+        }
 
     }
 
