@@ -47,14 +47,19 @@ public class PauseScreenScript : MonoBehaviour
     public void MainMenu()
     {
         TogglePause();
+        FindSceneController();
         sceneController.LoadScene("StartMenu");
     }
     public void Settings()
     {
         TogglePause();
+        FindSceneController();
         sceneController.LoadScene("Settings");
     }
-
+    public void FindSceneController()
+    {
+        sceneController = FindAnyObjectByType<SceneController>();
+    }
 
 
 }
