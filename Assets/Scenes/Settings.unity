@@ -223,6 +223,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RectMask2D
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
+--- !u!1001 &28476718
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2839517074156134630, guid: baa32dd239ccf664f9947efff5cf2729, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5608215
+      objectReference: {fileID: 0}
+    - target: {fileID: 2839517074156134630, guid: baa32dd239ccf664f9947efff5cf2729, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.3964386
+      objectReference: {fileID: 0}
+    - target: {fileID: 2839517074156134630, guid: baa32dd239ccf664f9947efff5cf2729, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2839517074156134630, guid: baa32dd239ccf664f9947efff5cf2729, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2839517074156134630, guid: baa32dd239ccf664f9947efff5cf2729, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2839517074156134630, guid: baa32dd239ccf664f9947efff5cf2729, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2839517074156134630, guid: baa32dd239ccf664f9947efff5cf2729, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2839517074156134630, guid: baa32dd239ccf664f9947efff5cf2729, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2839517074156134630, guid: baa32dd239ccf664f9947efff5cf2729, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2839517074156134630, guid: baa32dd239ccf664f9947efff5cf2729, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6234410945279781406, guid: baa32dd239ccf664f9947efff5cf2729, type: 3}
+      propertyPath: m_Name
+      value: Floor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: baa32dd239ccf664f9947efff5cf2729, type: 3}
 --- !u!1 &81547882
 GameObject:
   m_ObjectHideFlags: 0
@@ -5275,3 +5332,4 @@ SceneRoots:
   - {fileID: 2054853096}
   - {fileID: 229019843}
   - {fileID: 784014525}
+  - {fileID: 28476718}
