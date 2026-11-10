@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf5fbf6b035a6e48ab1f18b68470004, type: 3}
   m_Name: enemySquare
   m_EditorClassIdentifier: Assembly-CSharp::EnemyConfig
-  patrolSpeed: 5
+  patrolSpeed: 3
   groundCheckDistance: 0.7
   groundLayer:
     serializedVersion: 2
@@ -21,3 +21,8 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 128
+  chaseSpeed: 3
+  isFlying: 0
+  flySpeed: 3
+  bobAmplitude: 1
+  bobFrequency: 2
