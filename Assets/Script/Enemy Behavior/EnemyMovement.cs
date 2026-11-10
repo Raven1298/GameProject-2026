@@ -35,10 +35,11 @@ public class EnemyMovement : MonoBehaviour{
         
     }
 
+    public State CreatePatrolState () => config.isFlying ? new flyingPatrol(this) : new PatrolState(this);
+
     public void Start()
     {
-        State startState = config.isFlying ? new flyingPatrol(this) : new PatrolState(this);
-        StateMachine.Initalize(startState);
+        StateMachine.Initalize(CreatePatrolState());
     }
 
     private void Update() => StateMachine.CurrentState.Update();
@@ -52,4 +53,5 @@ public class EnemyMovement : MonoBehaviour{
         scale.x = Mathf.Abs(scale.x) * FacingDirections;
         transform.localScale = scale;
     }
+
 }
