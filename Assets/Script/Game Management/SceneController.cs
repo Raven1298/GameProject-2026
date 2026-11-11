@@ -13,6 +13,8 @@ public class SceneController : MonoBehaviour
     private GameObject Player;
     private CinemachineCamera vcam;
 
+    private GameManager gameManager;
+
     
 
 
@@ -20,6 +22,11 @@ public class SceneController : MonoBehaviour
     {
         Player = GameObject.FindWithTag("Player");
         vcam = FindAnyObjectByType<CinemachineCamera>(); 
+        gameManager = FindAnyObjectByType<GameManager>();
+        if(gameManager.IsPlayerFound() == false)
+        {
+            gameManager.FindPlayer();
+        }
         sceneFade = GetComponentInChildren<SceneFade>();
         yield return sceneFade.FadeInCoroutine(sceneFadeDur);
     }
