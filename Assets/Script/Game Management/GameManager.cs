@@ -6,9 +6,9 @@ public class GameManager : MonoBehaviour
 {
     
     private GameObject Player;
-    bool playerFound = false;
+    [SerializeField]bool playerFound = false;
     private playerMovement move;
-    [SerializeField] private int volume;
+    public float volume;
     string up;
     string down;
     string run;
@@ -21,22 +21,27 @@ public class GameManager : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
         if(Player!=null)
         {        
+            move = Player.GetComponent<playerMovement>();
             playerFound = true;
         }
     }
 
     
-    public void ChangeVolume(int v)
+    public void changeVolume(float v)
     {
     volume = v;
     }
-    public void changeRunSpeed(int s)
+    public void changeWalkSpeed(int s)
     {
          if(Player != null)
          {
-          move = Player.GetComponent<playerMovement>();
           move.speed = s;
          }
+         else
+        {
+            move.speed = 10;
+            Debug.Log("Failed to Set Speed");
+        }
     }
     public void changeDashSpeed(int s)
     {
@@ -52,7 +57,8 @@ public class GameManager : MonoBehaviour
 
         Player = GameObject.FindWithTag("Player");
         if(Player!=null)
-        {        
+        {   
+            move = Player.GetComponent<playerMovement>();
             playerFound = true;
         }
     }
@@ -68,6 +74,14 @@ public class GameManager : MonoBehaviour
             Debug.Log(lastscene);
     }
 
+    public float GetMove()
+    {
+        return move.speed;
+    }
+    public float GetDash()
+    {
+        return move.dashSpeed;
+    }
 
 
 

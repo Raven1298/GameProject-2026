@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private SoundList[] soundList;
     private static SoundManager instance;
     private AudioSource audioSource;
+    private GameManager gameManager;
 
     private void Awake()
     {
@@ -24,6 +25,9 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        gameManager = FindAnyObjectByType<GameManager>();
+        if(gameManager != null)
+        audioSource.volume = gameManager.volume;
     }
 
     public static void PlaySound(SoundType sound, float volume)

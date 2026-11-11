@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class SettingsScript : MonoBehaviour
@@ -9,8 +10,9 @@ public class SettingsScript : MonoBehaviour
      private HealthChange HUD;
      private GameManager gameManager;
      public TMP_InputField dashInputField;
-     public TMP_InputField runInputField;
+     public TMP_InputField walkInputField;
      public TMP_InputField JumoInputField;
+     public Slider slider;
 
 
 
@@ -21,12 +23,20 @@ public class SettingsScript : MonoBehaviour
         HUD = FindAnyObjectByType<HealthChange>();
         if(HUD != null)
         HUD.ToggleHUDImages();
+        slider.value = gameManager.volume;
+        walkInputField.text = ((int)gameManager.GetMove()).ToString();
+        dashInputField.text = ((int)gameManager.GetDash()).ToString();
+
+        
+
     }
 
 
     public void MainMenu()
     {
-        SetRunSpeed();
+        SetWalkSpeed();
+        SetDashSpeed();
+        SetVolume();
         if(HUD != null)
         HUD.ToggleHUDImages();
         sceneController.LoadScene("StartMenu");
@@ -34,7 +44,9 @@ public class SettingsScript : MonoBehaviour
     public void ReturnToLastScene()
     {
         
-        SetRunSpeed();
+        SetWalkSpeed();
+        SetDashSpeed();
+        SetVolume();
         if(HUD != null)
         HUD.ToggleHUDImages();
         if(gameManager.lastscene !="")
@@ -44,19 +56,20 @@ public class SettingsScript : MonoBehaviour
 
     }
 
-    private void SetRunSpeed()
+    private void SetWalkSpeed()
     {
         int v = 5;
-        try
+        string input = walkInputField.text;
+        Debug.Log(input);
+        if (int.TryParse(input, out v))
         {
-        v = int.Parse(runInputField.text);
+            gameManager.changeWalkSpeed(v);
         }
-        catch
+        else
         {
-        Debug.Log("Not an Integer");
-        v = 5;
+            Debug.LogWarning("Not an Integer");
         }
-        gameManager.changeDashSpeed(v);
+
     }
     private void SetDashSpeed()
     {
@@ -70,6 +83,13 @@ public class SettingsScript : MonoBehaviour
         Debug.Log("Not an Integer");
         v = 5;
         }
-        gameManager.changeRunSpeed(v);
+        gameManager.changeDashSpeed(v);
+    }
+    private void SetVolume()
+    {
+        float v = 5;
+        v = slider.value;
+        gameManager.changeVolume(v);
+
     }
 }
