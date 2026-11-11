@@ -24,7 +24,7 @@ public class SceneController : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
         vcam = FindAnyObjectByType<CinemachineCamera>(); 
         gameManager = FindAnyObjectByType<GameManager>();
-        if(gameManager.IsPlayerFound() == false)
+        if(gameManager != null && gameManager.IsPlayerFound() == false)
         {
             gameManager.FindPlayer();
         }
@@ -36,7 +36,10 @@ public class SceneController : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         if(currentScene != "Settings" && currentScene != "StartMenu")
-        gameManager.LastScene(currentScene);
+        {
+            if(gameManager != null)
+            gameManager.LastScene(currentScene);
+        }
         StartCoroutine(LoadSceneCourotine(sceneName));
     }
 
