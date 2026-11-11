@@ -1,16 +1,30 @@
-using UnityEditor.SettingsManagement;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class StartMenuScript : MonoBehaviour
 {
 
 
     [SerializeField] private SceneController sceneController;
+    private GameManager gameManager;
+
+    public void Start()
+    {
+    gameManager = FindAnyObjectByType<GameManager>();
+    }
 
     public void Play()
     {
+        if(gameManager.lastscene == "")
+        {
+        Debug.Log("Empty");
         sceneController.LoadScene("Playtest1");
+        }
+        else
+        {
+         Debug.Log("Scene: " + gameManager.lastscene);
+         sceneController.LoadScene(gameManager.lastscene);   
+        }
     }
 
 
@@ -24,17 +38,4 @@ public class StartMenuScript : MonoBehaviour
         sceneController.LoadScene("Settings");
     }
 
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

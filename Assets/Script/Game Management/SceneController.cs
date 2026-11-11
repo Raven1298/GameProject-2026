@@ -13,6 +13,9 @@ public class SceneController : MonoBehaviour
     private GameObject Player;
     private CinemachineCamera vcam;
 
+    private GameManager gameManager;
+    string currentScene;
+
     
 
 
@@ -20,12 +23,23 @@ public class SceneController : MonoBehaviour
     {
         Player = GameObject.FindWithTag("Player");
         vcam = FindAnyObjectByType<CinemachineCamera>(); 
+        gameManager = FindAnyObjectByType<GameManager>();
+        if(gameManager != null && gameManager.IsPlayerFound() == false)
+        {
+            gameManager.FindPlayer();
+        }
+        currentScene = SceneManager.GetActiveScene().name;
         sceneFade = GetComponentInChildren<SceneFade>();
         yield return sceneFade.FadeInCoroutine(sceneFadeDur);
     }
 
     public void LoadScene(string sceneName)
     {
+        if(currentScene != "Settings" && currentScene != "StartMenu")
+        {
+            if(gameManager != null)
+            gameManager.LastScene(currentScene);
+        }
         StartCoroutine(LoadSceneCourotine(sceneName));
     }
 

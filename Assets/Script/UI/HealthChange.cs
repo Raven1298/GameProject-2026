@@ -98,7 +98,7 @@ void Update()
     H1.sprite = Full;
     H2.sprite = P3;
     H3.sprite = Empt;  
-    Claire.sprite = FullDamageClaire;         
+    Claire.sprite = PartialDamageClaire;         
     }else if(health==4)
     {
     H1.sprite = Full;
@@ -146,6 +146,7 @@ void Update()
         H1.gameObject.SetActive(false); 
         H2.gameObject.SetActive(false); 
         H3.gameObject.SetActive(false); 
+        Claire.gameObject.SetActive(false);
         on = false;
         }
         else if(on == false)
@@ -153,6 +154,7 @@ void Update()
         H1.gameObject.SetActive(true); 
         H2.gameObject.SetActive(true); 
         H3.gameObject.SetActive(true); 
+        Claire.gameObject.SetActive(true);
         on = true;
 
         }
