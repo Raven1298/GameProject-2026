@@ -317,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9020637172914550091, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
       propertyPath: jumpForce
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1466,6 +1466,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9184853102773603154, guid: e3358be22b9d7a94582e81a7ee004956, type: 3}
   m_PrefabInstance: {fileID: 704461133}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &705096826
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3902493024766874247, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_Name
+      value: DashAbility
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.68226
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.5473776
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
 --- !u!1001 &725944027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4046,6 +4103,12 @@ MonoBehaviour:
   - name: Attack
     _sounds:
     - {fileID: 8300000, guid: f07574f047cf501439c7f4f9de258dee, type: 3}
+  - name: playerHurt
+    _sounds:
+    - {fileID: 8300000, guid: e81c6bd9afff3cb49957c42a90554b96, type: 3}
+  - name: enemyHurt
+    _sounds:
+    - {fileID: 8300000, guid: b59200042fa88bb4c93f33c318847b0d, type: 3}
 --- !u!82 &2138148237
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4244,3 +4307,4 @@ SceneRoots:
   - {fileID: 1856352105}
   - {fileID: 1174912096}
   - {fileID: 3515546988254007015}
+  - {fileID: 705096826}

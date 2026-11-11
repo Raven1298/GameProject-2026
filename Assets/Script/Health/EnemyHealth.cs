@@ -24,6 +24,7 @@ public class EnemyHealth : MonoBehaviour, IDamage
         HasTakenDamage = true;
         
         currentHealth -= damageAmount;
+        SoundManager.PlaySound(SoundType.enemyHurt, .2f);
         
         if(currentHealth <= 0){
             Die();

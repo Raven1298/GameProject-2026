@@ -86,6 +86,7 @@ private IEnumerator Hurt()
         while (true && playerHealthScript.health >= 0)
         {
             playerHealthScript.health--;
+            SoundManager.PlaySound(SoundType.playerHurt, .2f);
             yield return new WaitForSeconds(1f);
         }
     }

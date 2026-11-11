@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 public class playerMovement : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-public Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float speed = 5f;
     public float runSpeed = 10f;
     public float currentSpeed;
@@ -21,7 +21,7 @@ public Rigidbody2D rb;
     public float dashSpeed = 10f;
     public float dashTime = 0.1f;
     private float dashCooldown = 2.5f;
-
+    public bool hasDash = false;
 
     // Update is called once per frame
     void Update(){
@@ -60,14 +60,15 @@ public Rigidbody2D rb;
         }
         
         //dashing
-        if(Keyboard.current.kKey.wasPressedThisFrame && canDash && (Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed)){
-            StartCoroutine(Dash());
-        }
+        if(hasDash){
+            if(Keyboard.current.kKey.wasPressedThisFrame && canDash && (Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed)){
+                StartCoroutine(Dash());
+            }
 
-        if(Keyboard.current.kKey.wasPressedThisFrame && canDash && (Keyboard.current.leftArrowKey.isPressed || Keyboard.current.aKey.isPressed)){
-            StartCoroutine(LDash());
+            if(Keyboard.current.kKey.wasPressedThisFrame && canDash && (Keyboard.current.leftArrowKey.isPressed || Keyboard.current.aKey.isPressed)){
+                StartCoroutine(LDash());
+            }
         }
-    
 
         //Jumping
         if (Keyboard.current.spaceKey.wasPressedThisFrame){
@@ -108,5 +109,12 @@ public Rigidbody2D rb;
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.CompareTag("DashPowerUp")){
+            hasDash = true;
+            Destroy(other.gameObject);
+        }
     }
 }

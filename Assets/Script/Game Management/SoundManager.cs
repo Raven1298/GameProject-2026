@@ -5,7 +5,9 @@ using System;
 public enum SoundType
 {
     movement,
-    Attack
+    Attack,
+    playerHurt,
+    enemyHurt
 }
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
