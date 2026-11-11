@@ -31,6 +31,18 @@ public class SettingsScript : MonoBehaviour
         HUD.ToggleHUDImages();
         sceneController.LoadScene("StartMenu");
     }
+    public void ReturnToLastScene()
+    {
+        
+        SetRunSpeed();
+        if(HUD != null)
+        HUD.ToggleHUDImages();
+        if(gameManager.lastscene !="")
+        sceneController.LoadScene(gameManager.lastscene);
+        else
+        sceneController.LoadScene("StartMenu");
+
+    }
 
     private void SetRunSpeed()
     {

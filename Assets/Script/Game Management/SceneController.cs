@@ -14,6 +14,7 @@ public class SceneController : MonoBehaviour
     private CinemachineCamera vcam;
 
     private GameManager gameManager;
+    string currentScene;
 
     
 
@@ -27,12 +28,15 @@ public class SceneController : MonoBehaviour
         {
             gameManager.FindPlayer();
         }
+        currentScene = SceneManager.GetActiveScene().name;
         sceneFade = GetComponentInChildren<SceneFade>();
         yield return sceneFade.FadeInCoroutine(sceneFadeDur);
     }
 
     public void LoadScene(string sceneName)
     {
+        if(currentScene != "Settings" && currentScene != "StartMenu")
+        gameManager.LastScene(currentScene);
         StartCoroutine(LoadSceneCourotine(sceneName));
     }
 

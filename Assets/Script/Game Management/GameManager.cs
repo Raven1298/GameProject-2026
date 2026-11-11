@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     string down;
     string run;
     int runSpeed;
+
+    public string lastscene = "";
     
     public void Start()
     {
@@ -57,8 +59,13 @@ public class GameManager : MonoBehaviour
 
     public bool IsPlayerFound()
     {
-        Debug.Log(playerFound);
         return playerFound;
+    }
+
+    public void LastScene(string name)
+    {
+            lastscene = name;
+            Debug.Log(lastscene);
     }
 
 
