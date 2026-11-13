@@ -63,14 +63,14 @@ void Update()
     H1.sprite = Full;
     H2.sprite = Full;
     H3.sprite = P2;
-    Claire.sprite = PartialDamageClaire;         
+    Claire.sprite = HealthyClaire;         
     }
     else if(health==9)
     {
     H1.sprite = Full;
     H2.sprite = Full;
     H3.sprite = P3;  
-    Claire.sprite = PartialDamageClaire;         
+    Claire.sprite = HealthyClaire;        
     }
     else if(health==8)
     {
