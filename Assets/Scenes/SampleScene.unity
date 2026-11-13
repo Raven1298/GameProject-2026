@@ -430,6 +430,12 @@ MonoBehaviour:
   - name: Attack
     _sounds:
     - {fileID: 8300000, guid: f07574f047cf501439c7f4f9de258dee, type: 3}
+  - name: playerHurt
+    _sounds:
+    - {fileID: 8300000, guid: e81c6bd9afff3cb49957c42a90554b96, type: 3}
+  - name: enemyHurt
+    _sounds:
+    - {fileID: 8300000, guid: b59200042fa88bb4c93f33c318847b0d, type: 3}
 --- !u!82 &318445917
 AudioSource:
   m_ObjectHideFlags: 0
