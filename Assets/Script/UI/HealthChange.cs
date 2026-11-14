@@ -23,6 +23,7 @@ public class HealthChange : MonoBehaviour
 [SerializeField] private Sprite HealthyClaire;
 [SerializeField] private Sprite PartialDamageClaire;
 [SerializeField] private Sprite FullDamageClaire;
+[SerializeField] private GameObject canvasPrefab;
 
 private PlayerHealth playerHealthScript;
 private GameObject DeathScreen; 
@@ -131,7 +132,8 @@ void Update()
     H2.sprite = Empt;
     H3.sprite = Empt;
     Claire.sprite = FullDamageClaire;         
-    //DeathScreen.SetActive(true);    
+    Instantiate(canvasPrefab); 
+    playerHealthScript.health = 12;  
     }
 
 

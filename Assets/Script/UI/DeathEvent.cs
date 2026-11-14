@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class DeathEvent : MonoBehaviour
 {
+
+
+
+     [SerializeField] private SceneController sceneController;
+    private GameManager gameManager;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,4 +20,9 @@ public class DeathEvent : MonoBehaviour
     {
         
     }
+
+
+
+
+
 }
