@@ -8,6 +8,7 @@ public class SettingsScript : MonoBehaviour
 
      [SerializeField] private SceneController sceneController;
      private HealthChange HUD;
+     private InventoryManager inventoryManager;
      private GameManager gameManager;
      public TMP_InputField dashInputField;
      public TMP_InputField walkInputField;
@@ -20,14 +21,20 @@ public class SettingsScript : MonoBehaviour
     void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
+        inventoryManager = FindAnyObjectByType<InventoryManager>();
         HUD = FindAnyObjectByType<HealthChange>();
-        if(HUD != null)
-        HUD.ToggleHUDImages();
+
+        if(HUD != null){HUD.ToggleHUDImages();}
+        if(inventoryManager!=null)
+        {
+            if(inventoryManager.Inventory.activeInHierarchy == true)
+            {
+            inventoryManager.Inventory.SetActive(false);
+            }
+        }
         slider.value = gameManager.volume;
         walkInputField.text = ((int)gameManager.GetMove()).ToString();
         dashInputField.text = ((int)gameManager.GetDash()).ToString();
-
-        
 
     }
 
@@ -37,8 +44,7 @@ public class SettingsScript : MonoBehaviour
         SetWalkSpeed();
         SetDashSpeed();
         SetVolume();
-        if(HUD != null)
-        HUD.ToggleHUDImages();
+        if(HUD != null){HUD.ToggleHUDImages();}
         sceneController.LoadScene("StartMenu");
     }
     public void ReturnToLastScene()
