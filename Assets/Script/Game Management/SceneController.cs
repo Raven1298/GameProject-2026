@@ -15,7 +15,6 @@ public class SceneController : MonoBehaviour
 
     private GameManager gameManager;
     string currentScene;
-
     
 
 
@@ -33,6 +32,16 @@ public class SceneController : MonoBehaviour
         yield return sceneFade.FadeInCoroutine(sceneFadeDur);
     }
 
+    public void LoadScene(string sceneName, int x, int y)
+    {
+        if(currentScene != "Settings" && currentScene != "StartMenu")
+        {
+            if(gameManager != null)
+            gameManager.LastScene(currentScene);
+        }
+        StartCoroutine(LoadSceneCourotine(sceneName, x, y));
+    }
+
     public void LoadScene(string sceneName)
     {
         if(currentScene != "Settings" && currentScene != "StartMenu")
@@ -40,14 +49,14 @@ public class SceneController : MonoBehaviour
             if(gameManager != null)
             gameManager.LastScene(currentScene);
         }
-        StartCoroutine(LoadSceneCourotine(sceneName));
+        StartCoroutine(LoadSceneCourotine(sceneName, 2, -4));
     }
 
 
-    private IEnumerator LoadSceneCourotine(string sceneName)
+    private IEnumerator LoadSceneCourotine(string sceneName, int x, int y)
     {
         yield return sceneFade.FadeOutCoroutine(sceneFadeDur);
-        TeleportPlayer(2, -4);
+        TeleportPlayer(x, y);
         yield return SceneManager.LoadSceneAsync(sceneName);
 
 
