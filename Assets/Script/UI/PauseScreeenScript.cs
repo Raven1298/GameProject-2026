@@ -57,7 +57,7 @@ public class PauseScreenScript : MonoBehaviour
     {
         TogglePause();
         FindSceneController();
-        sceneController.LoadScene("Settings");
+        sceneController.LoadScene("Settings", -9, -4);
     }
     public void FindSceneController()
     {
