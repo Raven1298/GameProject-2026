@@ -62,4 +62,15 @@ public class InventoryManager : MonoBehaviour
 
 
     }
+
+    public void RemoveInventory()
+    {
+         for(int i = 0; i < itemSlot.Length; i++)
+        {
+            itemSlot[i].RemoveItem();
+        }
+
+
+    }
+
 }

@@ -109,4 +109,23 @@ public int AddItem(string itemName, int quantity, Sprite itemSprite, string item
 
     }
 
+
+    public void RemoveItem()
+    {
+        itemName = "";
+        itemImage.gameObject.SetActive(false);
+        itemImage.sprite = null;
+
+        //Update Description
+        itemSprite = null;
+        itemDescription = "";
+
+
+        //Update Quantity
+        quantity = 0;
+        quantityText.text = "";
+        quantityText.enabled = false;
+        isFull = false;
+    }
+
 }

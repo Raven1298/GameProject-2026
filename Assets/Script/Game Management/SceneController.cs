@@ -70,6 +70,8 @@ public class SceneController : MonoBehaviour
         {
         Cameraoffset = (Vector3)respawn - Player.transform.position;
         Player.transform.position = respawn;
+        Player.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0,0);
+
         }   
         if (vcam != null)
         {
