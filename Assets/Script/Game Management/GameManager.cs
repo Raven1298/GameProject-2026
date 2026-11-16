@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     private GameObject Player;
     [SerializeField]bool playerFound = false;
     private playerMovement move;
+    private InventoryManager inventoryManager;
     public float volume;
     string up;
     string down;
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
             move = Player.GetComponent<playerMovement>();
             playerFound = true;
         }
+        inventoryManager = FindAnyObjectByType<InventoryManager>();
+
     }
 
     
@@ -83,7 +86,11 @@ public class GameManager : MonoBehaviour
         return move.dashSpeed;
     }
 
-
+    public void ClearInventory()
+    {
+        if(inventoryManager==null){inventoryManager = FindAnyObjectByType<InventoryManager>();}
+        inventoryManager.RemoveInventory();
+    }
 
 
 

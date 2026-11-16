@@ -20,6 +20,7 @@ public class DeathEvent : MonoBehaviour
     {
         sceneController = FindAnyObjectByType<SceneController>();
         player = GameObject.FindWithTag("Player");
+        gameManager = FindAnyObjectByType<GameManager>();
         Rb = player.GetComponent<Rigidbody2D>();
         Bc = player.GetComponent<BoxCollider2D>();
         Bc.enabled = false;
@@ -37,6 +38,8 @@ public class DeathEvent : MonoBehaviour
         Bc.enabled = true;
         Rb.simulated = true;
         sceneController.LoadScene(SceneManager.GetActiveScene().name);
+        if(gameManager!=null)
+            gameManager.ClearInventory();
     }
 
     public void Exit()
@@ -44,6 +47,8 @@ public class DeathEvent : MonoBehaviour
         Bc.enabled = true;
         Rb.simulated = true;
         sceneController.LoadScene("StartMenu");
+        if(gameManager!=null)
+            gameManager.ClearInventory();
     }
 
 
