@@ -28,7 +28,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        if (isBlocking)
+        {
+            health -= damage / 2; // Reduce damage by half when blocking
+        }
+        else
+        {
+            health -= damage;
+        }
         SoundManager.PlaySound(SoundType.playerHurt, .2f);
         if(health <= 0)
         {
