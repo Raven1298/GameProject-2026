@@ -10,7 +10,7 @@ public class meleeAttack : MonoBehaviour
 
     public Transform attackTransform;
     public float attackRange = 1f;
-    private LayerMask attackableLayer;
+    private LayerMask enemyLayer;
     public float damageAmount = 1f;
     public float timeBtwAttacks = 0.5f;
     private float attackTimeCounter;
@@ -50,7 +50,7 @@ public class meleeAttack : MonoBehaviour
     /*
     void Attack()
     {
-        hits = Physics2D.CircleCastAll(attackTransform.position, attackRange, transform.right, 0f, attackableLayer);
+        hits = Physics2D.CircleCastAll(attackTransform.position, attackRange, transform.right, 0f, enemyLayer);
 
         for(int i = 0; i < hits.Length; i++){
             IDamage iDamage = hits[i].collider.gameObject.GetComponent<IDamage>();
@@ -69,7 +69,7 @@ public class meleeAttack : MonoBehaviour
         
         while (shouldBeDamaging)
         {
-            hits = Physics2D.CircleCastAll(attackTransform.position, attackRange, transform.right, 0f, attackableLayer);
+            hits = Physics2D.CircleCastAll(attackTransform.position, attackRange, transform.right, 0f, enemyLayer);
 
             for(int i = 0; i < hits.Length; i++){
                 IDamage iDamage = hits[i].collider.gameObject.GetComponent<IDamage>();
