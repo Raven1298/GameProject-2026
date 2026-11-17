@@ -311,6 +311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 9020637172914550091, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
+      propertyPath: dashSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2580,6 +2584,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9184853102773603154, guid: e3358be22b9d7a94582e81a7ee004956, type: 3}
   m_PrefabInstance: {fileID: 949036647}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1008785359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1008785360}
+  m_Layer: 0
+  m_Name: enemyLaunchPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1008785360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008785359}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.88, y: -0.119, z: 0}
+  m_LocalScale: {x: 1.43, y: 0.5080947, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1187594780}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1035916627
 GameObject:
   m_ObjectHideFlags: 0
@@ -3264,6 +3299,7 @@ GameObject:
   - component: {fileID: 1187594776}
   - component: {fileID: 1187594775}
   - component: {fileID: 1187594774}
+  - component: {fileID: 1187594781}
   m_Layer: 8
   m_Name: enemySquare
   m_TagString: Untagged
@@ -3447,14 +3483,31 @@ Transform:
   m_GameObject: {fileID: 1187594773}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.83, y: 3.6, z: 0}
+  m_LocalPosition: {x: -8, y: 3.12, z: 0}
   m_LocalScale: {x: 1, y: 2.6963475, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 597978219}
   - {fileID: 547885981}
+  - {fileID: 1008785360}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1187594781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187594773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb06231c87b8294fb681864f148c286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::enemyRangedAttack
+  projectilePrefab: {fileID: 7828341396418305115, guid: 372b305cdd6efe249b4415d17d7529e8, type: 3}
+  launchPoint: {fileID: 1008785360}
+  attackRange: 10
+  attackCooldown: 2
 --- !u!1001 &1541070014
 PrefabInstance:
   m_ObjectHideFlags: 0
