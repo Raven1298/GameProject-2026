@@ -22,10 +22,20 @@ public class playerMovement : MonoBehaviour
     public float dashTime = 0.1f;
     private float dashCooldown = 2.5f;
     public bool hasDash = false;
+    public bool isBlocking = false;
 
     // Update is called once per frame
     void Update(){
 
+        if (Keyboard.current.fKey.isPressed)
+        {
+            isBlocking = true;
+        }
+        else
+        {
+            isBlocking = false;
+        }
+        
         if(isDashing){
             return;
         }
@@ -44,7 +54,7 @@ public class playerMovement : MonoBehaviour
             currentSpeed = runSpeed;
         }
 
-        if (Keyboard.current != null){
+        if (Keyboard.current != null && !isBlocking){
             if (Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed){
                 xMovement.x += 1;
             }
@@ -71,7 +81,7 @@ public class playerMovement : MonoBehaviour
         }
 
         //Jumping
-        if (Keyboard.current.spaceKey.wasPressedThisFrame){
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && !isBlocking){
             if(isGrounded()){
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             }
