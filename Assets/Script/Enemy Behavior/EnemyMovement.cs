@@ -35,8 +35,12 @@ public class EnemyMovement : MonoBehaviour{
         
     }
 
-    public State CreatePatrolState () => config.isFlying ? new flyingPatrol(this) : new PatrolState(this);
-
+    public State CreatePatrolState (){
+        if (waypoints != null && waypoints.Length > 0){
+            return new WaypointPatrolState(this, waypoints);
+        }
+        return config.isFlying ? new flyingPatrol(this) : new PatrolState(this);
+    }
     public void Start()
     {
         StateMachine.Initalize(CreatePatrolState());
@@ -53,5 +57,7 @@ public class EnemyMovement : MonoBehaviour{
         scale.x = Mathf.Abs(scale.x) * FacingDirections;
         transform.localScale = scale;
     }
+
+    public Transform[] waypoints;
 
 }

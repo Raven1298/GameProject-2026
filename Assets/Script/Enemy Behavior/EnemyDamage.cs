@@ -23,7 +23,7 @@ public class EnemyDamage : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player" && attackTimeCounter >= timeBtwAttacks)
+        if(collision.gameObject.tag == "Player" && attackTimeCounter >= timeBtwAttacks && !playerHealth.isBlocking)
         {
             playerHealth.TakeDamage(damage);
             attackTimeCounter = 0f;
