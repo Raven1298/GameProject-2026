@@ -54,7 +54,15 @@ public class GameManager : MonoBehaviour
           move.dashSpeed = s;
          }
     }
-
+    public void ChangeJumpHeight(int j)
+    {
+        if(Player != null)
+         {
+            Debug.Log("GameManager!");
+          move = Player.GetComponent<playerMovement>();
+          move.jumpForce = j;
+         } 
+    }
     public void FindPlayer()
     {
 
