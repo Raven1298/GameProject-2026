@@ -18,6 +18,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Settings.unity
     guid: e2a5a922fff92b849b5c36e524070894
   - enabled: 1
+    path: Assets/Scenes/bakery.unity
+    guid: 1aa6c95aeb0d8b748975de65db5b9b3f
+  - enabled: 1
+    path: Assets/Scenes/clairsBedroom.unity
+    guid: 29aa6e6c8a00c9348837a7bb8f666c07
+  - enabled: 1
+    path: Assets/Scenes/basement.unity
+    guid: 1b9e9951fe301594887ea9dd7e9af957
+  - enabled: 1
     path: Assets/Scenes/SampleLevel.unity
     guid: d7cc5ae9170a488478dcbef9ac4e8ef5
   m_configObjects:
