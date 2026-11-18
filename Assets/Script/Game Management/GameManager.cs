@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     private GameObject Player;
     [SerializeField]bool playerFound = false;
     private playerMovement move;
+    private Rigidbody2D rb;
     private InventoryManager inventoryManager;
     public float volume = 1;
     string up;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
         if(Player!=null)
         {        
             move = Player.GetComponent<playerMovement>();
+            rb = Player.GetComponent<Rigidbody2D>();
             playerFound = true;
         }
         inventoryManager = FindAnyObjectByType<InventoryManager>();
@@ -58,9 +60,11 @@ public class GameManager : MonoBehaviour
     {
         if(Player != null)
          {
-            Debug.Log("GameManager!");
+          Debug.Log("GameManager!");
           move = Player.GetComponent<playerMovement>();
+          rb = Player.GetComponent<Rigidbody2D>();
           move.jumpForce = j;
+          rb.gravityScale = 2;
          } 
     }
     public void FindPlayer()
