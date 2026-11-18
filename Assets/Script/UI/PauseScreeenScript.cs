@@ -42,6 +42,7 @@ public class PauseScreenScript : MonoBehaviour
 		{
 			Time.timeScale = 0f;
             ChildObject.SetActive(true);
+            if(inventoryManager!=null)
             inventoryManager.Inventory.SetActive(false);
 			return(true);	
 		}
