@@ -593,7 +593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b91b824f7c0fa47a8a0fa29cc0bd9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  SceneName: SampleLevel
+  pick: 0
+  SceneName: bakery
   sceneController: {fileID: 536349652}
   x: -16
   y: 1
@@ -1936,6 +1937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b91b824f7c0fa47a8a0fa29cc0bd9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  pick: 0
   SceneName: SampleScene
   sceneController: {fileID: 536349652}
   x: 2
@@ -2920,6 +2922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   config: {fileID: 11400000, guid: 23cdc2dcbab034e48944542debb3464a, type: 2}
+  waypoints: []
 --- !u!212 &1117919429
 SpriteRenderer:
   serializedVersion: 3
