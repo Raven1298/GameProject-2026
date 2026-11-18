@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]bool playerFound = false;
     private playerMovement move;
     private InventoryManager inventoryManager;
-    public float volume;
+    public float volume = 1;
     string up;
     string down;
     string run;
@@ -54,7 +54,15 @@ public class GameManager : MonoBehaviour
           move.dashSpeed = s;
          }
     }
-
+    public void ChangeJumpHeight(int j)
+    {
+        if(Player != null)
+         {
+            Debug.Log("GameManager!");
+          move = Player.GetComponent<playerMovement>();
+          move.jumpForce = j;
+         } 
+    }
     public void FindPlayer()
     {
 
@@ -79,11 +87,25 @@ public class GameManager : MonoBehaviour
 
     public float GetMove()
     {
+        if(move!=null)
+        {
         return move.speed;
+        }
+        else
+        {
+        return 5;
+        }
     }
     public float GetDash()
     {
+        if(move!=null)
+        {
         return move.dashSpeed;
+        }
+        else
+        {
+          return 7;  
+        }
     }
 
     public void ClearInventory()
