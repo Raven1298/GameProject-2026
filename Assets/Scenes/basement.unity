@@ -859,7 +859,7 @@ GameObject:
   - component: {fileID: 2020237882}
   - component: {fileID: 2020237881}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: BakeryTransition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -877,10 +877,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b91b824f7c0fa47a8a0fa29cc0bd9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
+  pick: 1
   SceneName: bakery
   sceneController: {fileID: 2011865504}
-  x: 2
-  y: -4
+  x: 12
+  y: -1
 --- !u!61 &2020237882
 BoxCollider2D:
   m_ObjectHideFlags: 0

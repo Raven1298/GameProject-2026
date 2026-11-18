@@ -18,6 +18,7 @@ public class StartMenuScript : MonoBehaviour
         if(gameManager.lastscene == "")
         {
         Debug.Log("Empty");
+        //sceneController.LoadScene("clairsBedroom");
         sceneController.LoadScene("Playtest1");
         }
         else
