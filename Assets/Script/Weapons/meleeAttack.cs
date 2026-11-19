@@ -25,14 +25,17 @@ public class meleeAttack : MonoBehaviour
         if(Keyboard.current.jKey.wasPressedThisFrame && (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed))
         {
             AttackR();
+            SoundManager.PlaySound(SoundType.Attack, .2f);
         }
         else if(Keyboard.current.jKey.wasPressedThisFrame && (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed))
         {
             AttackL();
+            SoundManager.PlaySound(SoundType.Attack, .2f);
         }
         else if(Keyboard.current.jKey.wasPressedThisFrame)
         {
             AttackR();
+            SoundManager.PlaySound(SoundType.Attack, .2f);
         }
     }
     
