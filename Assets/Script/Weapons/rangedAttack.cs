@@ -31,8 +31,9 @@ public class rangedAttack : MonoBehaviour
             GameObject projectile = Instantiate(projectilePrefab, launchPoint2.position, Quaternion.identity);
             projectile.GetComponent<Projectile>().direction = aimDirection;
             shootTimer = shootCooldown;
+            return;
         }
-        else
+        else if(Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
         {
             GameObject projectile = Instantiate(projectilePrefab, launchPoint.position, Quaternion.identity);
             projectile.GetComponent<Projectile>().direction = aimDirection;  
@@ -46,6 +47,7 @@ public class rangedAttack : MonoBehaviour
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
         {
             aimDirection = Vector2.right;
+            return;
         }
         else if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed)
         {

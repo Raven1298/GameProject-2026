@@ -13,6 +13,8 @@ public class SceneController : MonoBehaviour
     private GameObject Player;
     private CinemachineCamera vcam;
 
+    private GameManager gameManager;
+    string currentScene;
     
 
 
@@ -20,20 +22,55 @@ public class SceneController : MonoBehaviour
     {
         Player = GameObject.FindWithTag("Player");
         vcam = FindAnyObjectByType<CinemachineCamera>(); 
+        gameManager = FindAnyObjectByType<GameManager>();
+        currentScene = SceneManager.GetActiveScene().name;
         sceneFade = GetComponentInChildren<SceneFade>();
+
+        
+        if(gameManager != null && gameManager.IsPlayerFound() == false)
+        {
+            gameManager.FindPlayer();
+        }
+        if (vcam != null && Player != null)
+        {
+            vcam.Target.TrackingTarget = Player.transform;
+        }
+        if(currentScene == "PuzzleRoom")
+        {
+            Debug.Log("SceneController!");
+            gameManager.ChangeJumpHeight(12);
+        }
+        
+
+
         yield return sceneFade.FadeInCoroutine(sceneFadeDur);
+    }
+
+    public void LoadScene(string sceneName, int x, int y)
+    {
+        if(currentScene != "Settings" && currentScene != "StartMenu")
+        {
+            if(gameManager != null)
+            gameManager.LastScene(currentScene);
+        }
+        StartCoroutine(LoadSceneCourotine(sceneName, x, y));
     }
 
     public void LoadScene(string sceneName)
     {
-        StartCoroutine(LoadSceneCourotine(sceneName));
+        if(currentScene != "Settings" && currentScene != "StartMenu")
+        {
+            if(gameManager != null)
+            gameManager.LastScene(currentScene);
+        }
+        StartCoroutine(LoadSceneCourotine(sceneName, 2, -4));
     }
 
 
-    private IEnumerator LoadSceneCourotine(string sceneName)
+    private IEnumerator LoadSceneCourotine(string sceneName, int x, int y)
     {
         yield return sceneFade.FadeOutCoroutine(sceneFadeDur);
-        TeleportPlayer(2, -4);
+        TeleportPlayer(x, y);
         yield return SceneManager.LoadSceneAsync(sceneName);
 
 
@@ -47,6 +84,8 @@ public class SceneController : MonoBehaviour
         {
         Cameraoffset = (Vector3)respawn - Player.transform.position;
         Player.transform.position = respawn;
+        Player.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0,0);
+
         }   
         if (vcam != null)
         {

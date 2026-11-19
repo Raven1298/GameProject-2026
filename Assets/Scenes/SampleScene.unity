@@ -430,6 +430,12 @@ MonoBehaviour:
   - name: Attack
     _sounds:
     - {fileID: 8300000, guid: f07574f047cf501439c7f4f9de258dee, type: 3}
+  - name: playerHurt
+    _sounds:
+    - {fileID: 8300000, guid: e81c6bd9afff3cb49957c42a90554b96, type: 3}
+  - name: enemyHurt
+    _sounds:
+    - {fileID: 8300000, guid: b59200042fa88bb4c93f33c318847b0d, type: 3}
 --- !u!82 &318445917
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1277,6 +1283,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   SceneName: Playtest1
   sceneController: {fileID: 86906709}
+  x: 2
+  y: -4
 --- !u!61 &1191992932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1477,6 +1485,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1444798951
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3902493024766874247, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_Name
+      value: DashAbility
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.809603
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.959813
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851955601677418278, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5f7355197cb071146b078546ca8f29e3, type: 3}
 --- !u!1 &1571847050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,7 +1553,7 @@ GameObject:
   - component: {fileID: 1571847053}
   - component: {fileID: 1571847052}
   - component: {fileID: 1571847051}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2399,6 +2464,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 901832695305781477, guid: 245184fd140e3034794fee550475ac2f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2559815821891746709, guid: 245184fd140e3034794fee550475ac2f, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -2723,3 +2792,4 @@ SceneRoots:
   - {fileID: 1191992934}
   - {fileID: 86906708}
   - {fileID: 385124149}
+  - {fileID: 1444798951}

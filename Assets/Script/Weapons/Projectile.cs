@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
     public float damageAmount = 1f;
     public LayerMask enemyLayer;
     
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,6 +31,5 @@ public class Projectile : MonoBehaviour
             collision.gameObject.GetComponent<EnemyHealth>().Damage(damageAmount);
             Destroy(gameObject);
         }
-        
     }
 }

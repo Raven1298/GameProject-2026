@@ -17,18 +17,19 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(Keyboard.current.tabKey.wasPressedThisFrame && menuActivated)
+        if(Time.timeScale != 0f)
         {
-            Inventory.SetActive(false);
-            menuActivated = false;
+            if(Keyboard.current.tabKey.wasPressedThisFrame && menuActivated)
+            {
+                Inventory.SetActive(false);
+                menuActivated = false;
+            }
+            else if(Keyboard.current.tabKey.wasPressedThisFrame && !menuActivated)
+            {
+                Inventory.SetActive(true);
+                menuActivated = true;
+            }
         }
-        else if(Keyboard.current.tabKey.wasPressedThisFrame && !menuActivated)
-        {
-            Inventory.SetActive(true);
-            menuActivated = true;
-        }
-
 
     }
 
@@ -61,4 +62,15 @@ public class InventoryManager : MonoBehaviour
 
 
     }
+
+    public void RemoveInventory()
+    {
+         for(int i = 0; i < itemSlot.Length; i++)
+        {
+            itemSlot[i].RemoveItem();
+        }
+
+
+    }
+
 }

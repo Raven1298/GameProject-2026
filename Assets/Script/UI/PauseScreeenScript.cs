@@ -8,11 +8,13 @@ public class PauseScreenScript : MonoBehaviour
     bool paused = false;
     public GameObject ChildObject;
     [SerializeField] private SceneController sceneController;
+    private InventoryManager inventoryManager;
 
 
     void Start()
     {
         ChildObject.SetActive(false);
+        inventoryManager = FindAnyObjectByType<InventoryManager>();
     }
 
 
@@ -40,6 +42,8 @@ public class PauseScreenScript : MonoBehaviour
 		{
 			Time.timeScale = 0f;
             ChildObject.SetActive(true);
+            if(inventoryManager!=null)
+            inventoryManager.Inventory.SetActive(false);
 			return(true);	
 		}
     }
@@ -54,7 +58,7 @@ public class PauseScreenScript : MonoBehaviour
     {
         TogglePause();
         FindSceneController();
-        sceneController.LoadScene("Settings");
+        sceneController.LoadScene("Settings", -9, -4);
     }
     public void FindSceneController()
     {

@@ -6,119 +6,76 @@ using UnityEngine.InputSystem;
 public class meleeAttack : MonoBehaviour
 {   
 
-    private RaycastHit2D[] hits;
-
-    public Transform attackTransform;
+    public Transform attackPoint;
+    public Transform attackPointL;
     public float attackRange = 1f;
-    private LayerMask attackableLayer;
-    public float damageAmount = 1f;
-    public float timeBtwAttacks = 0.5f;
-    private float attackTimeCounter;
-
-    public bool shouldBeDamaging { get; private set; } = false;
-
-    private List<IDamage> iDamages = new List<IDamage>();
+    public LayerMask enemyLayers;
+    public int damage = 1;
     
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-        attackTimeCounter = timeBtwAttacks;
-    }
+    public float cooldown = 1.5f;
+    private float timer;
 
-    // Update is called once per frame
     void Update()
     {
-        if(Keyboard.current.jKey.wasPressedThisFrame && attackTimeCounter >= timeBtwAttacks){
-            attackTimeCounter = 0f;
-            
-            //Attack();
-            StartCoroutine(DamageWhileSlashIsActive());
-            HitboxFlasher flasher = GetComponent<HitboxFlasher>();
-            if (flasher != null)
-            {
-                flasher.Flash(Color.red, 0.15f);
-            }
-            Debug.Log("Thats an attack");
-            SoundManager.PlaySound(SoundType.Attack, .5f);
-        }
-
-        attackTimeCounter += Time.deltaTime;
-    }
-
-    /*
-    void Attack()
-    {
-        hits = Physics2D.CircleCastAll(attackTransform.position, attackRange, transform.right, 0f, attackableLayer);
-
-        for(int i = 0; i < hits.Length; i++){
-            IDamage iDamage = hits[i].collider.gameObject.GetComponent<IDamage>();
-
-            if(iDamage != null){
-                iDamage.Damage(damageAmount);
-            }
-        }
-    }
-    */
-
-    public IEnumerator DamageWhileSlashIsActive()
-    {
-        
-        shouldBeDamaging = true;
-        
-        while (shouldBeDamaging)
+        if(timer > 0)
         {
-            hits = Physics2D.CircleCastAll(attackTransform.position, attackRange, transform.right, 0f, attackableLayer);
-
-            for(int i = 0; i < hits.Length; i++){
-                IDamage iDamage = hits[i].collider.gameObject.GetComponent<IDamage>();
-
-                if(iDamage != null && !iDamages.Contains(iDamage)){
-                    iDamage.Damage(damageAmount);
-                    iDamages.Add(iDamage);
+            timer -= Time.deltaTime;
+        }
+        if(Keyboard.current.jKey.wasPressedThisFrame && (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed))
+        {
+            AttackR();
+        }
+        else if(Keyboard.current.jKey.wasPressedThisFrame && (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed))
+        {
+            AttackL();
+        }
+        else if(Keyboard.current.jKey.wasPressedThisFrame)
+        {
+            AttackR();
+        }
+    }
+    
+    void AttackR()
+    {
+        if(timer <= 0)
+        {
+            Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+            if(enemies.Length > 0)
+            {
+                foreach(Collider2D enemy in enemies)
+                {
+                    enemy.GetComponent<EnemyHealth>().Damage(damage);
+                    
                 }
             }
-            yield return null; // Wait for the next frame before checking again
+
+            Debug.Log("Attack");
+            timer = cooldown;
         }
-
-        ReturnAttackablesToDamages();
     }
-
-    private void ReturnAttackablesToDamages()
+    void AttackL()
     {
-        foreach(IDamage thingThatWasDamaged in iDamages)
+        if(timer <= 0)
         {
-            thingThatWasDamaged.HasTakenDamage = false;
-        }
-        iDamages.Clear();
-    }
-
-   
-
-    void OnDrawGizmosSelected(){
-        Gizmos.DrawWireSphere(attackTransform.position, attackRange);
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Hitbox"))
-        {
-            HitboxFlasher flasher = GetComponent<HitboxFlasher>();
-            if (flasher != null)
+            Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPointL.position, attackRange, enemyLayers);
+            if(enemies.Length > 0)
             {
-                flasher.Flash(Color.white, 0.15f);
+                foreach(Collider2D enemy in enemies)
+                {
+                    enemy.GetComponent<EnemyHealth>().Damage(damage);
+                    
+                }
             }
+
+            Debug.Log("Attack");
+            timer = cooldown;
         }
     }
 
-    void ShouldBeDamagingToTrue()
+    private void OnDrawGizzmosSelected()
     {
-        shouldBeDamaging = true;
-    }
-
-    void ShouldBeDamagingToFalse()
-    {
-        shouldBeDamaging = false;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

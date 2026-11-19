@@ -6,12 +6,13 @@ using UnityEngine;
 public class EnemyConfig : ScriptableObject{
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [Header("Movement")]
-    public float patrolSpeed = 5;
+    public float patrolSpeed = 3;
     [Header("Patrol")]
     public float groundCheckDistance = 0.7f;
     public LayerMask groundLayer;
     public float wallCheckDistance = .5f;
     public LayerMask wallLayer;
+    public float chaseSpeed = 3;
 
     [Header("Type")]
     public bool isFlying;
