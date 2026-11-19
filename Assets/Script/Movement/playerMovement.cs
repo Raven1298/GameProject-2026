@@ -22,7 +22,7 @@ public class playerMovement : MonoBehaviour
     public float dashTime = 0.1f;
     private float dashCooldown = 2.5f;
     public bool hasDash = false;
-    public bool isBlocking = false;
+    private bool isBlocking = false;
 
     // Update is called once per frame
     void Update(){

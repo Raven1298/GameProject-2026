@@ -17,12 +17,13 @@ public class StartMenuScript : MonoBehaviour
     {
         if(gameManager.lastscene == "")
         {
-        Debug.Log("Empty");
-        sceneController.LoadScene("Playtest1");
+        //Debug.Log("Empty");
+        sceneController.LoadScene("clairsBedroom");
+        //sceneController.LoadScene("Playtest1");
         }
         else
         {
-         Debug.Log("Scene: " + gameManager.lastscene);
+         //Debug.Log("Scene: " + gameManager.lastscene);
          sceneController.LoadScene(gameManager.lastscene);   
         }
     }

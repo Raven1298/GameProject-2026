@@ -23,12 +23,26 @@ public class SceneController : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
         vcam = FindAnyObjectByType<CinemachineCamera>(); 
         gameManager = FindAnyObjectByType<GameManager>();
+        currentScene = SceneManager.GetActiveScene().name;
+        sceneFade = GetComponentInChildren<SceneFade>();
+
+        
         if(gameManager != null && gameManager.IsPlayerFound() == false)
         {
             gameManager.FindPlayer();
         }
-        currentScene = SceneManager.GetActiveScene().name;
-        sceneFade = GetComponentInChildren<SceneFade>();
+        if (vcam != null && Player != null)
+        {
+            vcam.Target.TrackingTarget = Player.transform;
+        }
+        if(currentScene == "PuzzleRoom")
+        {
+            Debug.Log("SceneController!");
+            gameManager.ChangeJumpHeight(12);
+        }
+        
+
+
         yield return sceneFade.FadeInCoroutine(sceneFadeDur);
     }
 
