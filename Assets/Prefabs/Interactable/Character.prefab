@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1576483650031513319
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5245903590525738489}
-  m_Layer: 0
-  m_Name: AttackTransform
-  m_TagString: Hitbox
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5245903590525738489
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576483650031513319}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.44, y: 0.02, z: 0}
-  m_LocalScale: {x: 0.27999383, y: 0.41919997, z: 0.986096}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2514148577627445054}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3983424228044205802
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,7 +38,6 @@ Transform:
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07098699}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 5245903590525738489}
   - {fileID: 8105994073169824566}
   - {fileID: 4628073822144803013}
   - {fileID: 7222905346135544318}
@@ -157,10 +125,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  dashSpeed: 15
+  dashSpeed: 20
   dashTime: 0.1
   hasDash: 0
-  isBlocking: 0
 --- !u!61 &4845205852513119503
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -246,10 +213,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350cd143184fe924281fe71aa12c1a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  attackTransform: {fileID: 5245903590525738489}
-  attackRange: 0.9
-  damageAmount: 1
-  timeBtwAttacks: 0.5
+  attackPoint: {fileID: 4628073822144803013}
+  attackPointL: {fileID: 7222905346135544318}
+  attackRange: 1
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  damage: 1
+  cooldown: 0.7
 --- !u!114 &-4412603429184742380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +302,7 @@ Transform:
   m_GameObject: {fileID: 6948382324473184968}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.62, y: -0.075, z: 0}
+  m_LocalPosition: {x: -14.9, y: -0.3, z: 0}
   m_LocalScale: {x: 1.4921087, y: 0.92809045, z: 0.986096}
   m_ConstrainProportionsScale: 0
   m_Children: []
