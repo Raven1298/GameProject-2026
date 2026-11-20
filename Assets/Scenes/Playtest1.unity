@@ -267,6 +267,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4412603429184742380, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
+      propertyPath: health
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2514148577627445054, guid: 8e56576c11af9ba4282293fd952cddd8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.68
@@ -4118,9 +4122,9 @@ SceneRoots:
   - {fileID: 305720498}
   - {fileID: 1861471379}
   - {fileID: 605585502}
+  - {fileID: 1646242148}
   - {fileID: 845672849}
   - {fileID: 432789048}
-  - {fileID: 1646242148}
   - {fileID: 1124197580}
   - {fileID: 2138148238}
   - {fileID: 1035916630}
