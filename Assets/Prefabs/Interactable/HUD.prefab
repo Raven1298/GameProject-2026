@@ -866,6 +866,7 @@ MonoBehaviour:
   HealthyClaire: {fileID: -3100000440538302411, guid: b2c0298ca93350747939c7941997416f, type: 3}
   PartialDamageClaire: {fileID: 1566229033126255407, guid: 9d5fdf4b99b17ea47b4d6fc1f2a800d4, type: 3}
   FullDamageClaire: {fileID: -1920369847018198529, guid: 5b1a8b47ff4b1de4d92a7c9eb544918c, type: 3}
+  canvasPrefab: {fileID: 0}
 --- !u!1 &4451471813390226039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,7 +1325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 428, y: -259}
+  m_AnchoredPosition: {x: 428, y: -219}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8750442624361037616
@@ -1355,7 +1356,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Updated 11/16
+  m_text: Updated 11/20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

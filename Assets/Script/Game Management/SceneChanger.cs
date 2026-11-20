@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -39,7 +40,8 @@ public class SceneChanger : MonoBehaviour
     {
       if(other.gameObject.tag == "Player")
         sceneController.LoadScene(SceneName, x, y);
-      yield return new WaitForSeconds(0.1f);
+      //yield return new WaitForSeconds(0.1f);
+      yield return null;
     }  
   }
 

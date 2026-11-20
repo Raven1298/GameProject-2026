@@ -13,6 +13,9 @@ public class SettingsScript : MonoBehaviour
      public TMP_InputField dashInputField;
      public TMP_InputField walkInputField;
      public TMP_InputField JumoInputField;
+     public TMP_InputField JumpPowerInputField;
+
+     
      public Slider slider;
 
 
@@ -35,6 +38,7 @@ public class SettingsScript : MonoBehaviour
         slider.value = gameManager.volume;
         walkInputField.text = ((int)gameManager.GetMove()).ToString();
         dashInputField.text = ((int)gameManager.GetDash()).ToString();
+        JumpPowerInputField.text = ((int)gameManager.GetJumpPower()).ToString();
 
     }
 
@@ -46,6 +50,7 @@ public class SettingsScript : MonoBehaviour
         SetWalkSpeed();
         SetDashSpeed();
         SetVolume();
+        SetJumpPow();
         }
         if(HUD != null){HUD.ToggleHUDImages();}
         sceneController.LoadScene("StartMenu");
@@ -58,6 +63,7 @@ public class SettingsScript : MonoBehaviour
         SetWalkSpeed();
         SetDashSpeed();
         SetVolume();
+        SetJumpPow();
         }
         if(HUD != null)
         HUD.ToggleHUDImages();
@@ -104,4 +110,19 @@ public class SettingsScript : MonoBehaviour
         gameManager.changeVolume(v);
 
     }
+     private void SetJumpPow()
+    {
+        int v = 5;
+        try
+        {
+        v = int.Parse(JumpPowerInputField.text);
+        }
+        catch
+        {
+        Debug.Log("Not an Integer");
+        v = 5;
+        }
+        gameManager.ChangeJumpHeight(v);
+    }
+    
 }

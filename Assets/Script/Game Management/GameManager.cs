@@ -60,11 +60,13 @@ public class GameManager : MonoBehaviour
     {
         if(Player != null)
          {
-          Debug.Log("GameManager!");
+          //Debug.Log("GameManager!");
           move = Player.GetComponent<playerMovement>();
           rb = Player.GetComponent<Rigidbody2D>();
           move.jumpForce = j;
           rb.gravityScale = 2;
+          Debug.Log("Changed to ");
+          Debug.Log(j);
          } 
     }
     public void FindPlayer()
@@ -105,6 +107,17 @@ public class GameManager : MonoBehaviour
         if(move!=null)
         {
         return move.dashSpeed;
+        }
+        else
+        {
+          return 7;  
+        }
+    }
+     public float GetJumpPower()
+    {
+        if(move!=null)
+        {
+        return move.jumpForce;
         }
         else
         {
