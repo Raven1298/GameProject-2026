@@ -45,33 +45,21 @@ public class SettingsScript : MonoBehaviour
 
     public void MainMenu()
     {
-        if(gameManager.lastscene != "")
-        {
-        SetWalkSpeed();
-        SetDashSpeed();
-        SetVolume();
-        SetJumpPow();
-        }
+        if(gameManager.lastscene != ""){updateAllSettings();}
         if(HUD != null){HUD.ToggleHUDImages();}
+
         sceneController.LoadScene("StartMenu");
     }
     public void ReturnToLastScene()
     {
         
-        if(gameManager.lastscene != "")
-        {
-        SetWalkSpeed();
-        SetDashSpeed();
-        SetVolume();
-        SetJumpPow();
-        }
-        if(HUD != null)
-        HUD.ToggleHUDImages();
-        if(gameManager.lastscene !="")
-        sceneController.LoadScene(gameManager.lastscene);
-        else
-        sceneController.LoadScene("StartMenu");
+        if(gameManager.lastscene != ""){updateAllSettings();}
+        if(HUD != null){HUD.ToggleHUDImages();}
 
+        if(gameManager.lastscene !="")
+            sceneController.LoadScene(gameManager.lastscene);
+        else
+            sceneController.LoadScene("StartMenu");
     }
 
     private void SetWalkSpeed()
@@ -123,6 +111,14 @@ public class SettingsScript : MonoBehaviour
         v = 5;
         }
         gameManager.ChangeJumpHeight(v);
+    }
+
+    private void updateAllSettings()
+    {
+        SetWalkSpeed();
+        SetDashSpeed();
+        SetVolume();
+        SetJumpPow();
     }
     
 }

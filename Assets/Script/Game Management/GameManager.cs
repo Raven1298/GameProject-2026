@@ -28,14 +28,14 @@ public class GameManager : MonoBehaviour
             playerFound = true;
         }
         inventoryManager = FindAnyObjectByType<InventoryManager>();
-
     }
 
     
     public void changeVolume(float v)
     {
-    volume = v;
+        volume = v;
     }
+
     public void changeWalkSpeed(int s)
     {
          if(Player != null)

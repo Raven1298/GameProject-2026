@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 public class PauseScreenScript : MonoBehaviour
@@ -21,7 +21,7 @@ public class PauseScreenScript : MonoBehaviour
     void Update()
     {
         
-        if(Keyboard.current.escapeKey.wasPressedThisFrame)
+        if(Keyboard.current.escapeKey.wasPressedThisFrame && SceneManager.GetActiveScene().name != "Settings")
         {
             paused = TogglePause();
 
