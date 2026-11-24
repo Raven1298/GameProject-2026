@@ -7,7 +7,10 @@ public enum SoundType
     movement,
     Attack,
     playerHurt,
-    enemyHurt
+    enemyHurt,
+    startMusic,
+    battleMusic,
+    bakeryMusic
 }
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
@@ -36,7 +39,7 @@ public class SoundManager : MonoBehaviour
     {
         AudioClip[] clips = instance.soundList[(int)sound].sounds;
         AudioClip randomClip = clips[UnityEngine.Random.Range(0, clips.Length)];
-         instance.audioSource.PlayOneShot(randomClip, volume);
+        instance.audioSource.PlayOneShot(randomClip, volume);
     }
 #if UNITY_EDITOR
     private void OnEnable()

@@ -3869,6 +3869,15 @@ MonoBehaviour:
   - name: enemyHurt
     _sounds:
     - {fileID: 8300000, guid: b59200042fa88bb4c93f33c318847b0d, type: 3}
+  - name: startMusic
+    _sounds:
+    - {fileID: 8300000, guid: 9851ebee129245041b646ac5c616164d, type: 3}
+  - name: battleMusic
+    _sounds:
+    - {fileID: 8300000, guid: 239288d822179f8419c947b693d06a29, type: 3}
+  - name: bakeryMusic
+    _sounds:
+    - {fileID: 8300000, guid: 88e401d4f110e0340b03a234db0cc595, type: 3}
 --- !u!82 &2138148237
 AudioSource:
   m_ObjectHideFlags: 0

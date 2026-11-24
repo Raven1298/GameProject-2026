@@ -11,6 +11,7 @@ public class StartMenuScript : MonoBehaviour
     public void Start()
     {
     gameManager = FindAnyObjectByType<GameManager>();
+    
     }
 
     public void Play()
@@ -20,6 +21,7 @@ public class StartMenuScript : MonoBehaviour
         //Debug.Log("Empty");
         sceneController.LoadScene("clairsBedroom");
         //sceneController.LoadScene("Playtest1");
+        
         }
         else
         {
