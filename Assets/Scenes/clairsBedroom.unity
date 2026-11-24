@@ -551,7 +551,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press (Spam) F to Move to Next Room (while touching door)
+  m_text: Press F to Move to Next Room (while touching door)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1106,11 +1106,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6037742812735990216, guid: 0dae294da1e4f454cb26d91a2095e2cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5324998
+      value: -0.49587178
       objectReference: {fileID: 0}
     - target: {fileID: 6037742812735990216, guid: 0dae294da1e4f454cb26d91a2095e2cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 38.61179
+      value: 38.611942
       objectReference: {fileID: 0}
     - target: {fileID: 6037742812735990216, guid: 0dae294da1e4f454cb26d91a2095e2cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1429,6 +1429,12 @@ MonoBehaviour:
   - name: enemyHurt
     _sounds:
     - {fileID: 8300000, guid: b59200042fa88bb4c93f33c318847b0d, type: 3}
+  - name: startMusic
+    _sounds: []
+  - name: battleMusic
+    _sounds: []
+  - name: bakeryMusic
+    _sounds: []
 --- !u!82 &1592159260
 AudioSource:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class StartMenuScript : MonoBehaviour
     public void Start()
     {
     gameManager = FindAnyObjectByType<GameManager>();
-    //SoundManager.PlaySound(SoundType.startMusic, .2f);
+    
     }
 
     public void Play()
