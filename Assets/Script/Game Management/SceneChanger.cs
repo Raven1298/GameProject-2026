@@ -40,6 +40,7 @@ public class SceneChanger : MonoBehaviour
       if(other.gameObject.tag == "Player")
         sceneController.LoadScene(SceneName, x, y);
       yield return new WaitForSeconds(0.1f);
+      //yield return null;
     }  
   }
 
@@ -49,8 +50,9 @@ public class SceneChanger : MonoBehaviour
     while(true)
     {
       if(other.gameObject.tag == "Player" && Keyboard.current.fKey.wasPressedThisFrame)
-        sceneController.LoadScene(SceneName, x, y);
-      yield return new WaitForSeconds(0.1f);;
+      sceneController.LoadScene(SceneName, x, y);
+      //yield return new WaitForSeconds(0.1f);
+      yield return null;
     }
   }
 

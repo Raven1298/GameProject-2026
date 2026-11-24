@@ -28,14 +28,14 @@ public class GameManager : MonoBehaviour
             playerFound = true;
         }
         inventoryManager = FindAnyObjectByType<InventoryManager>();
-
     }
 
     
     public void changeVolume(float v)
     {
-    volume = v;
+        volume = v;
     }
+
     public void changeWalkSpeed(int s)
     {
          if(Player != null)
@@ -60,7 +60,6 @@ public class GameManager : MonoBehaviour
     {
         if(Player != null)
          {
-          Debug.Log("GameManager!");
           move = Player.GetComponent<playerMovement>();
           rb = Player.GetComponent<Rigidbody2D>();
           move.jumpForce = j;
@@ -86,7 +85,6 @@ public class GameManager : MonoBehaviour
     public void LastScene(string name)
     {
             lastscene = name;
-            Debug.Log(lastscene);
     }
 
     public float GetMove()
@@ -105,6 +103,17 @@ public class GameManager : MonoBehaviour
         if(move!=null)
         {
         return move.dashSpeed;
+        }
+        else
+        {
+          return 7;  
+        }
+    }
+     public float GetJumpPower()
+    {
+        if(move!=null)
+        {
+        return move.jumpForce;
         }
         else
         {

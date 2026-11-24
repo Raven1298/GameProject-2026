@@ -37,7 +37,6 @@ public class SceneController : MonoBehaviour
         }
         if(currentScene == "PuzzleRoom")
         {
-            Debug.Log("SceneController!");
             gameManager.ChangeJumpHeight(12);
         }
         
