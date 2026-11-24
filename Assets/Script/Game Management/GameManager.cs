@@ -1,21 +1,21 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour
 {
     
     private GameObject Player;
-    [SerializeField]bool playerFound = false;
+    [SerializeField] bool playerFound = false;
     private playerMovement move;
     private Rigidbody2D rb;
     private InventoryManager inventoryManager;
+    [SerializeField] private GameObject Map;
     public float volume = 1;
     string up;
     string down;
     string run;
     int runSpeed;
-
     public string lastscene = "";
     
     public void Start()
@@ -83,9 +83,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void LastScene(string name)
-    {
-            lastscene = name;
-    }
+    {lastscene = name;}
 
     public float GetMove()
     {
@@ -127,7 +125,12 @@ public class GameManager : MonoBehaviour
         inventoryManager.RemoveInventory();
     }
 
+    public void AddMap()
+    {
+        Instantiate(Map);
+    }
 
+    
 
 
 }

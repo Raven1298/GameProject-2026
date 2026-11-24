@@ -162,6 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d772a11530e0ebc48ae38957595680cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  playerFound: 0
+  Map: {fileID: 780049729936604849, guid: 644b18f5abbbb6e459c3b6be6faed303, type: 3}
   volume: 0
   lastscene: 
 --- !u!4 &645694712
