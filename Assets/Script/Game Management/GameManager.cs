@@ -60,13 +60,10 @@ public class GameManager : MonoBehaviour
     {
         if(Player != null)
          {
-          //Debug.Log("GameManager!");
           move = Player.GetComponent<playerMovement>();
           rb = Player.GetComponent<Rigidbody2D>();
           move.jumpForce = j;
           rb.gravityScale = 2;
-          Debug.Log("Changed to ");
-          Debug.Log(j);
          } 
     }
     public void FindPlayer()
@@ -88,7 +85,6 @@ public class GameManager : MonoBehaviour
     public void LastScene(string name)
     {
             lastscene = name;
-            Debug.Log(lastscene);
     }
 
     public float GetMove()

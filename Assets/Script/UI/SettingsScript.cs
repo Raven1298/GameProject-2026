@@ -66,7 +66,6 @@ public class SettingsScript : MonoBehaviour
     {
         int v = 5;
         string input = walkInputField.text;
-        Debug.Log(input);
         if (int.TryParse(input, out v))
         {
             gameManager.changeWalkSpeed(v);
