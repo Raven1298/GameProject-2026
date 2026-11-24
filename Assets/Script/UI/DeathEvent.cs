@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Unity.Collections.Tests.CoreCLR.TestJobs;
+
 
 public class DeathEvent : MonoBehaviour
 {

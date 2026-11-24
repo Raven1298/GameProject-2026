@@ -13,6 +13,9 @@ public class SettingsScript : MonoBehaviour
      public TMP_InputField dashInputField;
      public TMP_InputField walkInputField;
      public TMP_InputField JumoInputField;
+     public TMP_InputField JumpPowerInputField;
+
+     
      public Slider slider;
 
 
@@ -35,44 +38,34 @@ public class SettingsScript : MonoBehaviour
         slider.value = gameManager.volume;
         walkInputField.text = ((int)gameManager.GetMove()).ToString();
         dashInputField.text = ((int)gameManager.GetDash()).ToString();
+        JumpPowerInputField.text = ((int)gameManager.GetJumpPower()).ToString();
 
     }
 
 
     public void MainMenu()
     {
-        if(gameManager.lastscene != "")
-        {
-        SetWalkSpeed();
-        SetDashSpeed();
-        SetVolume();
-        }
+        if(gameManager.lastscene != ""){updateAllSettings();}
         if(HUD != null){HUD.ToggleHUDImages();}
+
         sceneController.LoadScene("StartMenu");
     }
     public void ReturnToLastScene()
     {
         
-        if(gameManager.lastscene != "")
-        {
-        SetWalkSpeed();
-        SetDashSpeed();
-        SetVolume();
-        }
-        if(HUD != null)
-        HUD.ToggleHUDImages();
-        if(gameManager.lastscene !="")
-        sceneController.LoadScene(gameManager.lastscene);
-        else
-        sceneController.LoadScene("StartMenu");
+        if(gameManager.lastscene != ""){updateAllSettings();}
+        if(HUD != null){HUD.ToggleHUDImages();}
 
+        if(gameManager.lastscene !="")
+            sceneController.LoadScene(gameManager.lastscene);
+        else
+            sceneController.LoadScene("StartMenu");
     }
 
     private void SetWalkSpeed()
     {
         int v = 5;
         string input = walkInputField.text;
-        Debug.Log(input);
         if (int.TryParse(input, out v))
         {
             gameManager.changeWalkSpeed(v);
@@ -104,4 +97,27 @@ public class SettingsScript : MonoBehaviour
         gameManager.changeVolume(v);
 
     }
+     private void SetJumpPow()
+    {
+        int v = 5;
+        try
+        {
+        v = int.Parse(JumpPowerInputField.text);
+        }
+        catch
+        {
+        Debug.Log("Not an Integer");
+        v = 5;
+        }
+        gameManager.ChangeJumpHeight(v);
+    }
+
+    private void updateAllSettings()
+    {
+        SetWalkSpeed();
+        SetDashSpeed();
+        SetVolume();
+        SetJumpPow();
+    }
+    
 }
